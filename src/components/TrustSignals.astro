@@ -44,7 +44,7 @@ const titleClass = variant === 'dark' ? 'text-white' : 'text-[#1B2A4A]';
 const cardClass = variant === 'dark' ? 'bg-white/10 border-white/10' : 'bg-white border-slate-100 shadow-sm';
 const textClass = variant === 'dark' ? 'text-slate-300' : 'text-slate-600';
 const descClass = variant === 'dark' ? 'text-slate-400' : 'text-slate-500';
-const iconClass = variant === 'dark' ? 'text-[#2D6B2D]' : 'text-[#2D6B2D]';
+const iconClass = variant === 'dark' ? 'text-[#7DD87D]' : 'text-[#2D6B2D]';
 ---
 
 <section class={`section-padding ${bgClass}`}>
@@ -57,7 +57,7 @@ const iconClass = variant === 'dark' ? 'text-[#2D6B2D]' : 'text-[#2D6B2D]';
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {signals.map((signal) => (
         <div class={`rounded-xl border p-6 flex items-start gap-4 ${cardClass}`}>
-          <div class={`flex-shrink-0 w-12 h-12 rounded-lg bg-[#2D6B2D]/10 flex items-center justify-center ${iconClass}`} set:html={signal.icon} />
+          <div class={`flex-shrink-0 w-12 h-12 rounded-lg ${variant === 'dark' ? 'bg-white/10' : 'bg-[#2D6B2D]/10'} flex items-center justify-center ${iconClass}`} set:html={signal.icon} />
           <div>
             <h3 class={`font-bold text-base mb-1 ${titleClass}`}>{signal.title}</h3>
             <p class={`text-sm leading-relaxed ${descClass}`}>{signal.description}</p>
