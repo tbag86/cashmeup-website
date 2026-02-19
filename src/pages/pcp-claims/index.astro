@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import PCPLeadForm from '../../components/PCPLeadForm.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'PCP Car Finance Claims',
+  provider: {
+    '@type': 'Organization',
+    name: 'Cash Me Up!',
+    url: 'https://cashmeup.co.uk',
+  },
+  description: 'Free PCP car finance mis-selling claim service for UK consumers. No win, no fee.',
+  areaServed: {
+    '@type': 'Country',
+    name: 'United Kingdom',
+  },
+  serviceType: 'Claims Management Referral',
+};
+
+const breadcrumbs = [{ label: 'PCP Claims', href: '/pcp-claims/' }];
+
+const pcpFAQs = [
+  {
+    question: 'What is a PCP car finance claim?',
+    answer: 'A PCP claim is a compensation claim against your car finance lender for mis-selling your Personal Contract Purchase (PCP) or Hire Purchase (HP) agreement. Between 2007 and 2021, many lenders paid car dealers hidden commissions (called "discretionary commission arrangements" or DCAs) that incentivised dealers to push customers towards higher interest rates. The FCA ruled this practice unfair and potentially unlawful. If you were affected, you may be entitled to a refund of the excess interest you paid, plus compensation.',
+  },
+  {
+    question: 'How much could I claim in PCP compensation?',
+    answer: 'The amount varies depending on your finance agreement, the interest rate you were charged, and the size of the hidden commission paid to your dealer. Individual claims typically range from a few hundred pounds to several thousand. The average claim is estimated to be worth around £1,000–£2,000, though complex cases involving multiple agreements or high-value vehicles can be significantly higher. Some analysts have estimated the total industry compensation bill could exceed £30 billion.',
+  },
+  {
+    question: 'Who is eligible to make a PCP claim?',
+    answer: 'You may be eligible if you: (1) took out a PCP or HP car finance agreement in the UK between approximately April 2007 and January 2021; (2) the finance was arranged through a car dealership (not directly with a bank); (3) you were a UK resident at the time. You don\'t need to still have the car or still be paying the finance. Even if your agreement has ended or the car was returned, you may still be able to claim.',
+  },
+  {
+    question: 'What is the FCA motor finance review?',
+    answer: 'In January 2024, the FCA launched a major review into historical discretionary commission arrangements in the motor finance market. The FCA found evidence that DCAs were widespread and that millions of consumers may have been overcharged. In October 2024, the Court of Appeal ruled against lenders in three key cases, finding that secret commissions were unlawful. The FCA paused the standard 8-week complaint response clock to allow an orderly industry-wide resolution. A Supreme Court hearing is expected to provide final clarity.',
+  },
+  {
+    question: 'Do I need to use a claims company, or can I claim myself?',
+    answer: 'You can submit a complaint directly to your lender for free, then escalate to the Financial Ombudsman Service if needed — also for free. You do not have to use a claims management company. However, many people prefer to use a professional service because it\'s more convenient, the paperwork can be complex, and the professionals know how to maximise claims. Through Cash Me Up!, the referral to our regulated partners is completely free to you — you pay nothing at all.',
+  },
+  {
+    question: 'What happens after I submit my details to Cash Me Up!?',
+    answer: 'Once you submit your details, our regulated claims management partner will review your case and contact you — usually within 24 hours. They\'ll explain the process in full, ask any follow-up questions, and begin the claims process on your behalf. You\'ll be kept updated throughout. You don\'t need to do anything else.',
+  },
+  {
+    question: 'Which lenders are included in PCP claims?',
+    answer: 'Claims can be made against most major car finance lenders, including Black Horse (Lloyds Banking Group), Santander Consumer Finance, Motolio (formerly MotoNovo), Close Brothers, FirstRand (MotoNovo), Barclays Partner Finance, and many others. The key is not which lender you used, but whether a DCA was in place — and most were.',
+  },
+  {
+    question: 'Is there a time limit on making a PCP claim?',
+    answer: 'Normally, financial complaints must be submitted within 6 years of the event, or 3 years from when you became aware of the issue. However, the FCA\'s current review has complicated the timeline. The FCA issued guidance in 2024 extending the complaint response timeframe for lenders, and the situation is evolving. It\'s advisable to submit your claim as soon as possible rather than waiting, to protect your position.',
+  },
+  {
+    question: 'What does "no win, no fee" mean for PCP claims?',
+    answer: '"No win, no fee" means that if your claim is unsuccessful, you don\'t pay anything to the claims management company. You are only charged if your claim succeeds and you receive compensation. The fee is typically a percentage of the compensation received, agreed upfront. Through Cash Me Up!, we pass your details to our partners completely free — there\'s no charge from us at any stage.',
+  },
+  {
+    question: 'What if I still have my PCP agreement, or it has already ended?',
+    answer: 'Both situations are fine. Whether your PCP agreement is still active, has been settled early, ran to the end of the term, or you\'ve since returned the car under the voluntary termination provisions — you can still potentially make a claim for mis-sold commission. The claim relates to the original agreement and the hidden commission, not the current status of the car.',
+  },
+];
+---
+
+<BaseLayout
+  title="PCP Claims Hub — Start Your Free PCP Car Finance Claim | Cash Me Up!"
+  description="Find out if you're owed compensation for mis-sold PCP car finance. Free PCP claim check. UK consumers could be owed £1,000s. No win, no fee. Start your free claim today."
+  keywords="PCP claims, PCP mis-selling, car finance compensation, PCP claim UK, discretionary commission, FCA motor finance review"
+  schema={serviceSchema}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <Hero
+    title="You Could Be Owed"
+    titleAccent="£1,000s"
+    subtitle="Millions of UK consumers were mis-sold car finance between 2007 and 2021. Hidden dealer commissions meant you paid more interest than you should have. Cash Me Up! makes it completely free to check your eligibility and start your claim."
+    ctaPrimaryText="Start My Free PCP Check"
+    ctaPrimaryHref="#claim-form"
+    ctaSecondaryText="How Does It Work?"
+    ctaSecondaryHref="/pcp-claims/how-it-works/"
+    badge="FCA-Regulated Claims"
+    stats={[
+      { value: '£30bn+', label: 'Estimated total industry liability' },
+      { value: '40M+', label: 'Potentially affected agreements' },
+      { value: '£1,000s', label: 'Average claim value' },
+    ]}
+  />
+
+  <!-- What is PCP section -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-6">What Is PCP Car Finance Mis-Selling?</h2>
+        <div class="prose max-w-none text-slate-600 space-y-5 leading-relaxed">
+          <p class="text-lg">PCP (Personal Contract Purchase) is one of the most popular ways to finance a new or used car in the UK. For many years, it was also the source of one of the biggest mis-selling scandals in British financial history.</p>
+          <p>Between April 2007 and January 2021, the majority of car finance agreements in the UK were arranged through car dealerships. These dealers were paid commissions by the finance companies — which is normal. What wasn't normal, or fair, was the way those commissions were structured.</p>
+          <p>Many lenders used what are called <strong class="text-[#1B2A4A]">Discretionary Commission Arrangements (DCAs)</strong>. Under a DCA, the car dealer had the power to set the interest rate on your finance — within a range set by the lender. Crucially, the higher the interest rate the dealer set, the bigger the commission the dealer received.</p>
+          <p>This created a clear conflict of interest: the dealer was financially incentivised to charge you <em>as much interest as possible</em>, while you sat across the table from them believing they were acting in your best interests. In most cases, this conflict of interest was never disclosed to you.</p>
+          <p>The Financial Conduct Authority (FCA) investigated this practice and found it to be widespread and potentially unlawful. In January 2021, the FCA banned discretionary commission arrangements entirely — a clear acknowledgement that the practice was harmful to consumers.</p>
+          <p>In 2024, three Court of Appeal cases found that lenders had acted unlawfully by paying secret commissions to dealers without proper disclosure to customers. The Supreme Court is expected to hear the case in 2025, with a final ruling that could open the floodgates for billions of pounds in compensation.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+          {[
+            { label: 'Period Covered', value: 'April 2007 – January 2021', icon: '📅' },
+            { label: 'Finance Types', value: 'PCP & HP Agreements', icon: '🚗' },
+            { label: 'The Issue', value: 'Hidden dealer commissions', icon: '💰' },
+          ].map((item) => (
+            <div class="bg-[#F5F7FA] rounded-xl p-5 text-center">
+              <div class="text-3xl mb-2">{item.icon}</div>
+              <div class="text-sm text-slate-500 mb-1">{item.label}</div>
+              <div class="font-bold text-[#1B2A4A]">{item.value}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who is eligible section -->
+  <section class="section-padding section-alt">
+    <div class="container-wide">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-6">Who Is Eligible for a PCP Claim?</h2>
+        <p class="text-slate-600 text-lg leading-relaxed mb-8">You don't need to be a financial expert to know if you could have a claim. The eligibility criteria are straightforward, and millions of ordinary UK consumers qualify.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-xl p-6 border-l-4 border-[#2D6B2D]">
+            <h3 class="font-bold text-[#1B2A4A] mb-4 text-lg">You Likely Qualify If...</h3>
+            <ul class="space-y-3">
+              {[
+                'You had PCP or HP car finance between 2007 and 2021',
+                'Your finance was arranged through a UK car dealership',
+                'You were a UK resident at the time',
+                'You don\'t have the car any more (that\'s fine)',
+                'The finance agreement has ended (still eligible)',
+                'You\'re unsure of the exact dates (we can find out)',
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-600">
+                  <svg class="w-5 h-5 text-[#2D6B2D] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl p-6 border-l-4 border-red-300">
+            <h3 class="font-bold text-[#1B2A4A] mb-4 text-lg">You Probably Don't Qualify If...</h3>
+            <ul class="space-y-3">
+              {[
+                'Your finance was taken out after January 2021',
+                'You arranged finance directly with a bank (not through a dealer)',
+                'You had a personal loan (not car finance)',
+                'Your agreement was a straightforward fixed-rate loan with no DCA',
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-600">
+                  <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p class="text-slate-500 text-sm">Not sure? Submit your details and our regulated partners will assess your specific situation for free.</p>
+        <a href="#claim-form" class="btn-primary mt-4 inline-block">Check My Eligibility Free</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Claim Form Section -->
+  <section class="section-padding bg-white" id="claim-form">
+    <div class="container-wide">
+      <div class="max-w-2xl mx-auto">
+        <div class="text-center mb-8">
+          <span class="badge mb-3 inline-block">Free — No Obligation</span>
+          <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Start Your Free PCP Claim Check</h2>
+          <p class="text-slate-600">Takes under 2 minutes. We'll pass your details to a regulated partner who will assess your case for free and be in touch within 24 hours.</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 md:p-8">
+          <PCPLeadForm />
+        </div>
+        <p class="text-center text-xs text-slate-400 mt-4">Your details are passed to FCA-regulated claims management companies only. We never sell your data.</p>
+      </div>
+    </div>
+  </section>
+
+  <TrustSignals variant="alt" />
+
+  <FAQSection
+    title="PCP Claims: Your Questions Answered"
+    subtitle="Everything you need to know about making a PCP car finance claim."
+    faqs={pcpFAQs}
+  />
+
+  <CTABanner
+    title="Don't Miss Out on Money You're Owed"
+    subtitle="The window for PCP claims won't be open forever. Check your eligibility today — it's free and takes 2 minutes."
+    ctaText="Start My Free PCP Check"
+    ctaHref="#claim-form"
+    ctaSecondaryText="Learn How It Works"
+    ctaSecondaryHref="/pcp-claims/how-it-works/"
+  />
+</BaseLayout>

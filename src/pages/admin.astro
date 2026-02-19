@@ -1,0 +1,176 @@
+---
+export const prerender = false;
+
+import { getAllMembers, getAllPCPLeads, getAllContactMessages } from '../lib/db';
+
+const adminPassword = import.meta.env.ADMIN_PASSWORD || 'changeme123';
+const authHeader = Astro.request.headers.get('authorization');
+const url = new URL(Astro.request.url);
+const queryPassword = url.searchParams.get('pw');
+
+const isAuthorised = queryPassword === adminPassword;
+
+if (!isAuthorised) {
+  return new Response(
+    `<!DOCTYPE html><html><head><title>Admin Login - Cash Me Up!</title></head><body style="font-family:sans-serif;max-width:400px;margin:100px auto;padding:20px;">
+    <h1 style="color:#1B2A4A;">Cash Me Up! Admin</h1>
+    <p>Enter admin password to access the dashboard.</p>
+    <form method="GET">
+      <input type="password" name="pw" placeholder="Admin password" style="width:100%;padding:8px;margin-bottom:10px;border:1px solid #ccc;border-radius:4px;" />
+      <button type="submit" style="width:100%;padding:10px;background:#2D6B2D;color:white;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">Login</button>
+    </form>
+    </body></html>`,
+    { status: 401, headers: { 'Content-Type': 'text/html' } }
+  );
+}
+
+const members = getAllMembers();
+const leads = getAllPCPLeads();
+const messages = getAllContactMessages();
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard — Cash Me Up!</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; background: #F5F7FA; color: #1B2A4A; }
+    h1 { color: #1B2A4A; border-bottom: 3px solid #2D6B2D; padding-bottom: 10px; }
+    h2 { color: #1B2A4A; margin-top: 2rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+    .stat { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .stat-num { font-size: 2.5rem; font-weight: 900; color: #2D6B2D; }
+    .stat-label { font-size: 0.85rem; color: #64748B; margin-top: 4px; }
+    table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    th { background: #1B2A4A; color: white; padding: 10px 14px; text-align: left; font-size: 0.8rem; }
+    td { padding: 10px 14px; border-bottom: 1px solid #E2E8F0; font-size: 0.85rem; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #F5F7FA; }
+    .badge-new { background: #E8F5E8; color: #1E5A1E; padding: 2px 8px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; }
+    .empty { color: #94A3B8; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Cash Me Up! Admin Dashboard</h1>
+  <p style="color:#64748B;">Logged in. <a href="/admin/">Refresh</a></p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">{members.length}</div>
+      <div class="stat-label">Members</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">{leads.length}</div>
+      <div class="stat-label">PCP Leads</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">{messages.length}</div>
+      <div class="stat-label">Contact Messages</div>
+    </div>
+  </div>
+
+  <h2>PCP Leads ({leads.length})</h2>
+  {leads.length === 0 ? (
+    <p class="empty">No PCP leads yet.</p>
+  ) : (
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Had Finance?</th>
+            <th>Start Year</th>
+            <th>Lender</th>
+            <th>Status</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leads.map((lead) => (
+            <tr>
+              <td>{lead.id}</td>
+              <td>{lead.first_name} {lead.last_name}</td>
+              <td>{lead.email}</td>
+              <td>{lead.phone}</td>
+              <td>{lead.had_car_finance}</td>
+              <td>{lead.finance_start_year || '—'}</td>
+              <td>{lead.lender || '—'}</td>
+              <td><span class="badge-new">{lead.status}</span></td>
+              <td>{lead.created_at}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  <h2>Members ({members.length})</h2>
+  {members.length === 0 ? (
+    <p class="empty">No members yet.</p>
+  ) : (
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Marketing Consent</th>
+            <th>Joined</th>
+          </tr>
+        </thead>
+        <tbody>
+          {members.map((member) => (
+            <tr>
+              <td>{member.id}</td>
+              <td>{member.first_name}</td>
+              <td>{member.email}</td>
+              <td>{member.phone || '—'}</td>
+              <td>{member.marketing_consent ? '✓ Yes' : '✗ No'}</td>
+              <td>{member.created_at}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  <h2>Contact Messages ({messages.length})</h2>
+  {messages.length === 0 ? (
+    <p class="empty">No contact messages yet.</p>
+  ) : (
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Received</th>
+          </tr>
+        </thead>
+        <tbody>
+          {messages.map((msg) => (
+            <tr>
+              <td>{msg.id}</td>
+              <td>{msg.name}</td>
+              <td>{msg.email}</td>
+              <td style="max-width:300px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{msg.message}</td>
+              <td>{msg.created_at}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+</body>
+</html>

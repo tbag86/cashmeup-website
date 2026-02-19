@@ -1,0 +1,151 @@
+---
+// Member signup form - Astro island
+---
+
+<div id="signup-form-wrapper" class="w-full">
+  <form id="signup-form" class="space-y-4" novalidate>
+    <!-- Success state (hidden by default) -->
+    <div id="signup-success" class="hidden bg-[#E8F5E8] border border-[#2D6B2D]/30 rounded-xl p-6 text-center">
+      <div class="w-12 h-12 bg-[#2D6B2D] rounded-full flex items-center justify-center mx-auto mb-4">
+        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Welcome to Cash Me Up!</h3>
+      <p class="text-slate-600">You're on the list. We'll be in touch as soon as new opportunities go live. Keep an eye on your inbox!</p>
+    </div>
+
+    <!-- Error state -->
+    <div id="signup-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm"></div>
+
+    <!-- Form fields -->
+    <div id="signup-fields">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="signup-firstname" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">
+            First Name <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="signup-firstname"
+            name="first_name"
+            required
+            autocomplete="given-name"
+            placeholder="Your first name"
+            class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent transition-colors"
+          />
+        </div>
+        <div>
+          <label for="signup-email" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">
+            Email Address <span class="text-red-500">*</span>
+          </label>
+          <input
+            type="email"
+            id="signup-email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="your@email.com"
+            class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent transition-colors"
+          />
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <label for="signup-phone" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">
+          Phone Number <span class="text-slate-400 font-normal">(optional)</span>
+        </label>
+        <input
+          type="tel"
+          id="signup-phone"
+          name="phone"
+          autocomplete="tel"
+          placeholder="07700 900000"
+          class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent transition-colors"
+        />
+      </div>
+
+      <div class="mt-4">
+        <label class="flex items-start gap-3 cursor-pointer group">
+          <input
+            type="checkbox"
+            name="marketing_consent"
+            id="signup-consent"
+            class="mt-0.5 w-4 h-4 rounded border-slate-300 text-[#2D6B2D] focus:ring-[#2D6B2D] flex-shrink-0"
+          />
+          <span class="text-xs text-slate-500 leading-relaxed">
+            I'm happy to receive emails about new money-saving opportunities, grants, cashback offers, and claims from Cash Me Up!. You can unsubscribe at any time. <a href="/privacy-policy/" class="text-[#2D6B2D] hover:underline">Privacy Policy</a>.
+          </span>
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        id="signup-submit"
+        class="w-full btn-primary mt-5 py-4 text-base"
+      >
+        <span id="signup-btn-text">Join Free — Get Early Access</span>
+        <span id="signup-btn-loading" class="hidden">
+          <svg class="animate-spin w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          Joining...
+        </span>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('signup-form') as HTMLFormElement;
+  const successEl = document.getElementById('signup-success');
+  const errorEl = document.getElementById('signup-error');
+  const fieldsEl = document.getElementById('signup-fields');
+  const btnText = document.getElementById('signup-btn-text');
+  const btnLoading = document.getElementById('signup-btn-loading');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl?.classList.add('hidden');
+
+    btnText?.classList.add('hidden');
+    btnLoading?.classList.remove('hidden');
+
+    const formData = new FormData(form);
+    const data = {
+      first_name: formData.get('first_name'),
+      email: formData.get('email'),
+      phone: formData.get('phone') || '',
+      marketing_consent: formData.get('marketing_consent') === 'on' ? 1 : 0,
+    };
+
+    try {
+      const res = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        fieldsEl?.classList.add('hidden');
+        successEl?.classList.remove('hidden');
+      } else {
+        if (errorEl) {
+          errorEl.textContent = result.error || 'Something went wrong. Please try again.';
+          errorEl.classList.remove('hidden');
+        }
+        btnText?.classList.remove('hidden');
+        btnLoading?.classList.add('hidden');
+      }
+    } catch {
+      if (errorEl) {
+        errorEl.textContent = 'Network error. Please check your connection and try again.';
+        errorEl.classList.remove('hidden');
+      }
+      btnText?.classList.remove('hidden');
+      btnLoading?.classList.add('hidden');
+    }
+  });
+</script>

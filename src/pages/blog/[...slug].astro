@@ -1,0 +1,123 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const breadcrumbs = [
+  { label: 'Blog', href: '/blog/' },
+  { label: post.data.title },
+];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  author: {
+    '@type': 'Person',
+    name: post.data.author,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Cash Me Up!',
+    url: 'https://cashmeup.co.uk',
+  },
+  datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate || post.data.pubDate).toISOString(),
+  url: `https://cashmeup.co.uk/blog/${post.slug}/`,
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://cashmeup.co.uk/blog/${post.slug}/`,
+  },
+};
+
+const formattedDate = post.data.pubDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<BaseLayout
+  title={`${post.data.title} | Cash Me Up! Blog`}
+  description={post.data.description}
+  schema={articleSchema}
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <article class="section-padding bg-white">
+    <div class="container-wide max-w-3xl mx-auto">
+      <!-- Post header -->
+      <header class="mb-10">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="badge">{post.data.category}</span>
+          <span class="text-slate-400 text-sm">{formattedDate}</span>
+          <span class="text-slate-300 text-sm">·</span>
+          <span class="text-slate-400 text-sm">{post.data.readTime}</span>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-black text-[#1B2A4A] leading-tight mb-4">{post.data.title}</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">{post.data.description}</p>
+        <div class="flex items-center gap-2 mt-6 pt-6 border-t border-slate-100">
+          <div class="w-8 h-8 rounded-full bg-[#1B2A4A] flex items-center justify-center">
+            <span class="text-[#2D6B2D] text-xs font-black">CM</span>
+          </div>
+          <div>
+            <span class="text-sm font-semibold text-[#1B2A4A]">{post.data.author}</span>
+            <span class="text-slate-400 text-xs ml-2">cashmeup.co.uk</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Post content -->
+      <div class="prose prose-slate max-w-none
+        prose-headings:text-[#1B2A4A] prose-headings:font-bold
+        prose-a:text-[#2D6B2D] prose-a:no-underline hover:prose-a:underline
+        prose-strong:text-[#1B2A4A]
+        prose-li:text-slate-600
+        prose-p:text-slate-600 prose-p:leading-relaxed">
+        <Content />
+      </div>
+
+      <!-- Post footer CTA -->
+      <div class="mt-12 p-8 bg-[#1B2A4A] rounded-2xl text-center">
+        <h3 class="text-2xl font-black text-white mb-3">Check If You're Owed Money</h3>
+        <p class="text-slate-300 mb-6">Start your free PCP claim check — takes 2 minutes, completely free, no win no fee.</p>
+        <a href="/pcp-claims/" class="btn-primary text-lg px-8 py-3">
+          Start My Free Check →
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="mt-8 pt-8 border-t border-slate-100">
+        <a href="/blog/" class="inline-flex items-center gap-2 text-slate-500 hover:text-[#1B2A4A] text-sm transition-colors">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+          </svg>
+          Back to all articles
+        </a>
+      </nav>
+    </div>
+  </article>
+
+  <CTABanner
+    title="Ready to Start Your Free PCP Claim?"
+    subtitle="Join thousands of UK consumers already checking if they're owed money."
+    ctaText="Start My Free PCP Check"
+    ctaHref="/pcp-claims/"
+    ctaSecondaryText="Join Free"
+    ctaSecondaryHref="/join/"
+    variant="navy"
+  />
+</BaseLayout>

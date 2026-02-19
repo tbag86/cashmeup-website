@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [{ label: 'Contact' }];
+
+const contactFAQs = [
+  {
+    question: 'How quickly will you respond to my enquiry?',
+    answer: 'We aim to respond to all contact form enquiries within 2 business days. For urgent queries about an active PCP claim, please contact your claims management partner directly — they handle all claim-related communication.',
+  },
+  {
+    question: 'I have a question about my PCP claim — who should I contact?',
+    answer: 'If you\'ve already submitted a PCP claim through Cash Me Up!, your claims management partner handles all claim-related queries. You should have received their contact details when you submitted your application. Cash Me Up! is a referral service and cannot provide updates on specific claims.',
+  },
+  {
+    question: 'How can I delete my data?',
+    answer: 'You have the right to request deletion of your personal data under UK GDPR. Please contact us using the form below or by email, clearly stating that you wish to exercise your right to erasure. We will process your request within 30 days.',
+  },
+];
+---
+
+<BaseLayout
+  title="Contact Cash Me Up! — Get in Touch | Cash Me Up!"
+  description="Contact the Cash Me Up! team. We aim to respond within 2 business days. For PCP claim queries, contact your claims partner directly."
+  keywords="contact Cash Me Up, Cash Me Up email, get in touch Cash Me Up"
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="section-padding bg-white">
+    <div class="container-wide max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-black text-[#1B2A4A] mb-4">Get in Touch</h1>
+        <p class="text-slate-600 text-lg">We're here to help. Send us a message and we'll get back to you within 2 business days.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8">
+            <h2 class="text-xl font-bold text-[#1B2A4A] mb-6">Send Us a Message</h2>
+            <form id="contact-form" class="space-y-5" novalidate>
+              <div id="contact-success" class="hidden bg-[#E8F5E8] border border-[#2D6B2D]/30 rounded-xl p-6 text-center">
+                <div class="w-12 h-12 bg-[#2D6B2D] rounded-full flex items-center justify-center mx-auto mb-3">
+                  <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 class="font-bold text-[#1B2A4A] mb-2">Message Sent!</h3>
+                <p class="text-slate-600 text-sm">Thank you for getting in touch. We'll respond within 2 business days.</p>
+              </div>
+              <div id="contact-error" class="hidden bg-red-50 border border-red-200 rounded-xl p-4 text-red-700 text-sm"></div>
+              <div id="contact-fields">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contact-name" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">Your Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="contact-name" name="name" required placeholder="Full name"
+                      class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent" />
+                  </div>
+                  <div>
+                    <label for="contact-email" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">Email Address <span class="text-red-500">*</span></label>
+                    <input type="email" id="contact-email" name="email" required placeholder="your@email.com"
+                      class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent" />
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <label for="contact-message" class="block text-sm font-semibold text-[#1B2A4A] mb-1.5">Message <span class="text-red-500">*</span></label>
+                  <textarea id="contact-message" name="message" required rows="6" placeholder="How can we help?"
+                    class="w-full px-4 py-3 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2D6B2D] focus:border-transparent resize-vertical"></textarea>
+                </div>
+                <button type="submit" id="contact-submit" class="btn-primary w-full mt-4 py-3.5">
+                  <span id="contact-btn-text">Send Message</span>
+                  <span id="contact-btn-loading" class="hidden">Sending...</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <div class="card">
+            <h3 class="font-bold text-[#1B2A4A] mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5 text-[#2D6B2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Email Us
+            </h3>
+            <p class="text-sm text-slate-600 mb-2">For general enquiries:</p>
+            <a href="mailto:hello@cashmeup.co.uk" class="text-[#2D6B2D] font-semibold text-sm hover:underline">hello@cashmeup.co.uk</a>
+          </div>
+
+          <div class="card">
+            <h3 class="font-bold text-[#1B2A4A] mb-3">Response Times</h3>
+            <div class="space-y-2 text-sm text-slate-600">
+              <div class="flex justify-between">
+                <span>General enquiries</span>
+                <span class="font-medium text-[#1B2A4A]">2 business days</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Data requests</span>
+                <span class="font-medium text-[#1B2A4A]">Within 30 days</span>
+              </div>
+              <div class="flex justify-between">
+                <span>PCP claim queries</span>
+                <span class="font-medium text-[#1B2A4A]">Via your partner</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card bg-[#F5F7FA]">
+            <h3 class="font-bold text-[#1B2A4A] mb-2 text-sm">PCP Claim Queries</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">If you have a query about an active PCP claim, please contact your claims management partner directly. Cash Me Up! is a referral service and cannot provide updates on individual claims.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection
+    title="Contact FAQs"
+    faqs={contactFAQs}
+    id="contact-faq"
+  />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successEl = document.getElementById('contact-success');
+  const errorEl = document.getElementById('contact-error');
+  const fieldsEl = document.getElementById('contact-fields');
+  const btnText = document.getElementById('contact-btn-text');
+  const btnLoading = document.getElementById('contact-btn-loading');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorEl?.classList.add('hidden');
+    btnText?.classList.add('hidden');
+    btnLoading?.classList.remove('hidden');
+
+    const formData = new FormData(form);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        fieldsEl?.classList.add('hidden');
+        successEl?.classList.remove('hidden');
+      } else {
+        if (errorEl) { errorEl.textContent = result.error || 'Something went wrong.'; errorEl.classList.remove('hidden'); }
+        btnText?.classList.remove('hidden'); btnLoading?.classList.add('hidden');
+      }
+    } catch {
+      if (errorEl) { errorEl.textContent = 'Network error. Please try again.'; errorEl.classList.remove('hidden'); }
+      btnText?.classList.remove('hidden'); btnLoading?.classList.add('hidden');
+    }
+  });
+</script>

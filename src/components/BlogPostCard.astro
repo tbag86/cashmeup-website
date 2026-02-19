@@ -1,0 +1,49 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pubDate: Date;
+  category?: string;
+  readTime?: string;
+}
+
+const { title, description, slug, pubDate, category = 'News', readTime = '5 min read' } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+---
+
+<article class="card-hover flex flex-col h-full">
+  <!-- Category + Date bar -->
+  <div class="flex items-center gap-3 mb-4">
+    <span class="badge">{category}</span>
+    <span class="text-slate-400 text-xs">{formattedDate}</span>
+    <span class="text-slate-300 text-xs">·</span>
+    <span class="text-slate-400 text-xs">{readTime}</span>
+  </div>
+
+  <!-- Title -->
+  <h3 class="text-lg font-bold text-[#1B2A4A] mb-3 leading-tight group-hover:text-[#2D6B2D] transition-colors">
+    <a href={`/blog/${slug}/`} class="hover:text-[#2D6B2D] transition-colors">
+      {title}
+    </a>
+  </h3>
+
+  <!-- Description -->
+  <p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">{description}</p>
+
+  <!-- Read more -->
+  <a
+    href={`/blog/${slug}/`}
+    class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2D6B2D] hover:text-[#1E5A1E] transition-colors mt-auto"
+  >
+    Read more
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+    </svg>
+  </a>
+</article>

@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [{ label: 'Terms of Service' }];
+const lastUpdated = '19 February 2025';
+---
+
+<BaseLayout
+  title="Terms of Service | Cash Me Up!"
+  description="Cash Me Up! terms of service. The terms governing your use of our website and services."
+  noindex={true}
+>
+  <Breadcrumbs items={breadcrumbs} />
+  <section class="section-padding bg-white">
+    <div class="container-wide max-w-3xl mx-auto">
+      <div class="mb-8 p-4 bg-amber-50 border border-amber-200 rounded-xl">
+        <p class="text-amber-800 text-sm"><strong>Template Notice:</strong> These terms of service are a template and should be reviewed by a qualified solicitor before publication.</p>
+      </div>
+      <h1 class="text-4xl font-black text-[#1B2A4A] mb-2">Terms of Service</h1>
+      <p class="text-slate-500 text-sm mb-10">Last updated: {lastUpdated}</p>
+
+      <div class="prose max-w-none text-slate-600 space-y-8">
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">1. About These Terms</h2>
+          <p>These terms govern your use of the Cash Me Up! website (cashmeup.co.uk) and services. By using our site, you agree to these terms. Please read them carefully. If you have questions, contact us at hello@cashmeup.co.uk.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">2. Our Services</h2>
+          <p>Cash Me Up! is a free referral and information service that connects UK consumers with regulated claims management companies and other financial services partners. We do not provide legal advice, financial advice, or claims management services directly. We are not responsible for the outcome of any claim submitted through our partners.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">3. Free Service to Consumers</h2>
+          <p>Our service to consumers is free of charge. We earn referral commissions from our regulated partners, not from consumers. You will never be charged by Cash Me Up! for using our website or submitting an enquiry. Any fees related to a claims management service are between you and the claims company, and will be clearly disclosed to you before you proceed.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">4. No Legal or Financial Advice</h2>
+          <p>Information on this website is for general informational purposes only. It does not constitute legal or financial advice. You should seek independent legal or financial advice before making decisions about claims or financial products. We make reasonable efforts to keep information accurate and up to date, but we cannot guarantee it is always current.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">5. Your Responsibilities</h2>
+          <p>When using our services, you agree to: provide accurate and truthful information; not submit multiple enquiries using different identities; not use our services for any unlawful purpose; not attempt to disrupt or compromise our website or services.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">6. Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, Cash Me Up! is not liable for any loss or damage arising from your use of our services or our partners' services, including the outcome of any claim. Our total liability to you shall not exceed £100. This limitation does not affect any liability that cannot be excluded under applicable law.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">7. Governing Law</h2>
+          <p>These terms are governed by the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold text-[#1B2A4A] mb-4">8. Changes to These Terms</h2>
+          <p>We may update these terms from time to time. We will notify registered members of significant changes by email. Continued use of the site after changes constitutes acceptance of the updated terms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

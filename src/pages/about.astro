@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbs = [{ label: 'About Us' }];
+
+const aboutFAQs = [
+  {
+    question: 'How does Cash Me Up! make money if it\'s free for consumers?',
+    answer: 'We operate a referral model. When we pass your details to a regulated claims management company and you proceed with a claim, we receive a referral commission from that partner. This comes entirely from the claims company — not from you. You pay nothing, ever. This model allows us to offer a genuinely free service to consumers while building a sustainable business.',
+  },
+  {
+    question: 'Are Cash Me Up!\'s partners properly regulated?',
+    answer: 'Yes. We only work with claims management companies that are authorised and regulated by the Financial Conduct Authority (FCA) or, for legal work, by the Solicitors Regulation Authority (SRA). You can verify any company\'s regulatory status on the FCA Register at register.fca.org.uk.',
+  },
+  {
+    question: 'What is Cash Me Up!\'s relationship with the claims companies?',
+    answer: 'Cash Me Up! is a referral service. We identify consumers who may be eligible for claims and connect them with regulated claims management companies. We are not a claims management company ourselves and do not handle claims directly. Our partners handle all claim submissions, communications with lenders, and FOS escalations.',
+  },
+  {
+    question: 'Is Cash Me Up! itself regulated?',
+    answer: 'As a referral and information service, we operate within the framework of UK consumer protection law and data protection regulations (UK GDPR). Our regulated partners are FCA-authorised. We are committed to operating transparently and ethically. Our terms and privacy policy set out our obligations in full.',
+  },
+  {
+    question: 'Will Cash Me Up! always be free?',
+    answer: 'Our core consumer service will always be free. Our business model is based on referral commissions, not consumer fees. We are building a platform that puts money back in consumers\' pockets — that mission is incompatible with charging consumers. As we expand into grants, cashback, and other services, all of them will be free to use.',
+  },
+  {
+    question: 'How can I trust Cash Me Up! with my personal data?',
+    answer: 'We take data protection extremely seriously. We comply with UK GDPR and the Data Protection Act 2018. Your data is stored securely, used only for the purposes you consent to, and never sold to third parties. We only share your data with our regulated partners in order to process your enquiry. You can read our full Privacy Policy for complete details.',
+  },
+];
+---
+
+<BaseLayout
+  title="About Cash Me Up! — Our Mission to Put Money Back in Your Pocket | Cash Me Up!"
+  description="Learn about Cash Me Up! — our mission, how we work, our business model, and our vision for the UK's most comprehensive free money platform. Transparent, consumer-first, always free."
+  keywords="about Cash Me Up, who is Cash Me Up, Cash Me Up mission, free claims service UK"
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="gradient-hero text-white section-padding">
+    <div class="container-wide">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-black mb-6">
+          We're on a Mission to Put <span class="text-[#2D6B2D]">Your Money</span> Back in Your Pocket
+        </h1>
+        <p class="text-slate-300 text-xl leading-relaxed">
+          Cash Me Up! was built on a simple belief: UK consumers deserve to know about the money they're owed — and they deserve help getting it, without being charged for the privilege.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-wide max-w-4xl mx-auto">
+      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">Our Story</h2>
+      <div class="space-y-5 text-slate-600 leading-relaxed">
+        <p class="text-lg">Cash Me Up! was founded with a clear-eyed view of a problem that affects millions of people in the UK: there's a huge amount of money sitting unclaimed, owed to ordinary consumers — but the process of getting it back is confusing, time-consuming, and often feels out of reach.</p>
+        <p>Consider PCP car finance alone. Independent analysts estimate that lenders may owe over £30 billion in compensation to UK consumers who were mis-sold their car finance agreements. That's billions of pounds sitting in the hands of banks and finance companies that should be in the pockets of everyday people who overpaid on their monthly car finance.</p>
+        <p>Then there are the grants — millions of pounds of government funding that UK homeowners and businesses are entitled to claim, but don't, simply because they don't know the schemes exist or find the application process too complex. There are the cashback schemes, the compensation funds for energy mis-selling, the refunds for overcharged bank customers.</p>
+        <p>All of this money exists. It's not a scam. It's not too good to be true. It's simply money that the system hasn't made easy enough to claim — until now.</p>
+        <p>Cash Me Up! is building the platform that changes that. Starting with PCP car finance claims, and expanding rapidly into grants, cashback, discounted shopping, and every other legitimate opportunity for UK consumers to get money they're genuinely owed or entitled to.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-alt">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">What We Stand For</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Consumer First',
+            description: 'Every decision we make is tested against one question: is this good for the consumer? We never work with partners whose interests conflict with yours. We never recommend a claim we don\'t believe is legitimate. Your trust is worth more than any commission.',
+            icon: '🫵',
+          },
+          {
+            title: 'Radical Transparency',
+            description: 'We tell you exactly how we make money (referral commissions from partners), what your data is used for (connecting you with regulated partners), and what the risks are (none financially, as it\'s free). No small print designed to confuse. No hidden anything.',
+            icon: '🔍',
+          },
+          {
+            title: 'Always Free',
+            description: 'Our service to consumers is permanently free. We will never introduce a subscription, a processing fee, or any other charge to consumers. If we can\'t make our business model work while remaining free to consumers, we\'ll change our business model — not our promise to you.',
+            icon: '✅',
+          },
+        ].map((item) => (
+          <div class="card text-center">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-xl font-bold text-[#1B2A4A] mb-3">{item.title}</h3>
+            <p class="text-slate-600 leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-wide max-w-4xl mx-auto">
+      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">Our Business Model — Explained Honestly</h2>
+      <div class="space-y-5 text-slate-600 leading-relaxed">
+        <p class="text-lg">We believe in being completely transparent about how we make money, so there's no ambiguity whatsoever.</p>
+        <p>When you submit a PCP claim enquiry through Cash Me Up!, we pass your details to one of our regulated claims management partners. If you proceed with a claim and it's successful, the claims management company earns a success fee (a percentage of your compensation, agreed with you upfront). Cash Me Up! receives a referral commission from that claims company.</p>
+        <p><strong class="text-[#1B2A4A]">To be absolutely clear:</strong> the referral commission we receive comes entirely from our partner, not from you. Your compensation is not reduced by our referral commission. You receive the full agreed amount, minus only the claims company's success fee (which you agree to before proceeding).</p>
+        <p>As we expand into grants, cashback, and discounted shopping, we'll earn in similar ways — from partnerships with providers, not from consumers. The consumer always gets the full benefit.</p>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection
+    title="Questions About Cash Me Up!"
+    faqs={aboutFAQs}
+  />
+
+  <CTABanner
+    title="Ready to Get Started?"
+    subtitle="Join thousands of UK consumers already checking if they're owed money."
+    ctaText="Check My PCP Claim"
+    ctaHref="/pcp-claims/"
+    ctaSecondaryText="Join Free"
+    ctaSecondaryHref="/join/"
+  />
+</BaseLayout>

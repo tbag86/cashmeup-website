@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import CTABanner from '../../components/CTABanner.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbs = [
+  { label: 'PCP Claims', href: '/pcp-claims/' },
+  { label: 'Eligibility' },
+];
+
+const eligibilityFAQs = [
+  {
+    question: 'Do I need to have the original finance agreement?',
+    answer: 'No. You don\'t need to find old paperwork. Our regulated partners have the tools and legal authority to trace your finance agreements using your personal details. Even if you\'ve moved house, changed your name, or have no records whatsoever, they can usually locate your historic agreements.',
+  },
+  {
+    question: 'Can I still claim if the car was on a joint agreement?',
+    answer: 'Yes. Joint finance agreements are equally eligible. Each person named on the agreement could potentially make a claim. It\'s worth both parties submitting their details, as claims can sometimes be made individually even on joint agreements, depending on the circumstances.',
+  },
+  {
+    question: 'What if I voluntarily terminated my PCP agreement?',
+    answer: 'You can still make a claim. Voluntary termination (VT) is your legal right under the Consumer Credit Act, and it doesn\'t affect your eligibility to claim for the mis-selling of the original commission arrangement. The claim relates to what happened at the point of sale, not what happened at the end of the agreement.',
+  },
+  {
+    question: 'I had a business car on PCP — can I still claim?',
+    answer: 'Business-use vehicles are more complex. PCP claims primarily relate to consumer credit regulated agreements, which typically apply to personal vehicles. However, if the car was also used for personal purposes and the agreement was a regulated credit agreement, you may still be eligible. It\'s worth checking with our regulated partners.',
+  },
+  {
+    question: 'I\'m not sure if my finance was PCP or HP — does it matter?',
+    answer: 'Not significantly for eligibility purposes. Both PCP (Personal Contract Purchase) and HP (Hire Purchase) agreements arranged through dealerships during the qualifying period may be covered. The key factor is whether a discretionary commission arrangement was in place — and most dealership-arranged finance during that period was affected.',
+  },
+  {
+    question: 'What if my lender has gone out of business?',
+    answer: 'If your lender has ceased trading, your claim may still be possible through the Financial Services Compensation Scheme (FSCS) in some circumstances. Our regulated partners can advise on whether this route is available for your specific situation.',
+  },
+  {
+    question: 'Can I claim if I was in arrears or had a poor credit history at the time?',
+    answer: 'Yes. The PCP mis-selling claim is about what happened at the point of sale — specifically, whether a hidden commission was paid that wasn\'t disclosed to you. Your credit history or whether you kept up with repayments doesn\'t affect your eligibility to claim for the undisclosed commission.',
+  },
+  {
+    question: 'What if I already made a PCP complaint directly to my lender and they rejected it?',
+    answer: 'Even if your lender rejected a previous complaint, it may be worth re-submitting or escalating to the Financial Ombudsman Service given the new Court of Appeal rulings and the FCA\'s ongoing review. The legal landscape has changed significantly since most initial complaints were rejected. A regulated claims partner can advise you on this.',
+  },
+];
+---
+
+<BaseLayout
+  title="PCP Claim Eligibility Checker — Do You Qualify? | Cash Me Up!"
+  description="Find out if you qualify for a PCP car finance compensation claim. Our eligibility guide covers who qualifies, what types of agreements are covered, and how to check your specific situation."
+  keywords="PCP claim eligibility, who can claim PCP, PCP eligibility checker, car finance claim eligibility, qualify PCP claim"
+>
+  <Breadcrumbs items={breadcrumbs} />
+
+  <section class="gradient-hero text-white section-padding">
+    <div class="container-wide text-center">
+      <span class="badge mb-6 inline-block">Eligibility Guide</span>
+      <h1 class="text-4xl md:text-5xl font-black mb-6">Do You Qualify for a PCP Claim?</h1>
+      <p class="text-slate-300 text-xl max-w-3xl mx-auto">
+        Millions of UK consumers qualify — but not everyone. This guide helps you understand exactly who is eligible and why.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-padding bg-white">
+    <div class="container-wide max-w-4xl mx-auto">
+      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">The Key Eligibility Criteria</h2>
+      <p class="text-slate-600 text-lg mb-8 leading-relaxed">Eligibility for a PCP or HP car finance claim is based on a set of straightforward criteria. You don't need to prove wrongdoing yourself — that's your claims partner's job. You simply need to have had a qualifying finance agreement during the relevant period.</p>
+      
+      <div class="space-y-4 mb-10">
+        {[
+          {
+            title: 'Agreement Date',
+            detail: 'Your PCP or HP agreement must have been taken out between approximately April 2007 and January 2021.',
+            why: 'The FCA banned DCAs in January 2021. Agreements after this date were subject to the new rules. The April 2007 date aligns with the introduction of FCA regulation of consumer credit.',
+          },
+          {
+            title: 'Finance Type',
+            detail: 'The agreement must be a PCP (Personal Contract Purchase) or HP (Hire Purchase) car finance agreement.',
+            why: 'These are the agreement types where discretionary commission arrangements were most commonly used. Personal loans from banks arranged independently of the dealership are not covered.',
+          },
+          {
+            title: 'Arranged Through a Dealership',
+            detail: 'The finance must have been arranged through a car dealership (acting as a credit broker), not directly with a bank or lender.',
+            why: 'It was the dealership\'s role as credit broker that created the opportunity for the DCA. Agreements arranged directly with lenders didn\'t involve dealer commission.',
+          },
+          {
+            title: 'UK Residency',
+            detail: 'You must have been a UK resident at the time the agreement was taken out.',
+            why: 'UK consumer credit law applies to agreements entered into by UK residents. The FCA\'s regulatory oversight applies only to UK financial services.',
+          },
+          {
+            title: 'Regulated Credit Agreement',
+            detail: 'The agreement must be a regulated consumer credit agreement (as opposed to a business credit agreement over certain thresholds).',
+            why: 'FCA consumer credit regulation covers personal credit agreements. Some very high-value or purely business-use agreements fall outside this regulation.',
+          },
+        ].map((item, i) => (
+          <div class="bg-[#F5F7FA] rounded-xl p-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-[#2D6B2D] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-white font-bold text-sm">{i + 1}</span>
+              </div>
+              <div class="flex-1">
+                <h3 class="font-bold text-[#1B2A4A] mb-1">{item.title}</h3>
+                <p class="text-slate-700 text-sm mb-2"><strong>What this means:</strong> {item.detail}</p>
+                <p class="text-slate-500 text-xs"><strong>Why it matters:</strong> {item.why}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-[#1B2A4A] rounded-2xl p-8 text-center">
+        <h3 class="text-2xl font-black text-white mb-4">Think You Might Qualify?</h3>
+        <p class="text-slate-300 mb-6">The fastest way to find out is to submit your details. Our regulated partners will assess your specific situation for free, with no obligation.</p>
+        <a href="/pcp-claims/#claim-form" class="btn-primary text-lg px-8 py-4">
+          Start My Free Eligibility Check
+          <svg class="w-5 h-5 ml-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <FAQSection
+    title="Eligibility Questions Answered"
+    subtitle="Specific eligibility scenarios explained."
+    faqs={eligibilityFAQs}
+  />
+
+  <CTABanner
+    title="Ready to Check Your Specific Situation?"
+    subtitle="Our regulated partners assess every case individually. Submit your details for a free, no-obligation assessment."
+    ctaText="Check My Eligibility Free"
+    ctaHref="/pcp-claims/#claim-form"
+  />
+</BaseLayout>

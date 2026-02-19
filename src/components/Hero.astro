@@ -1,0 +1,111 @@
+---
+export interface Props {
+  title: string;
+  titleAccent?: string;
+  subtitle: string;
+  ctaPrimaryText?: string;
+  ctaPrimaryHref?: string;
+  ctaSecondaryText?: string;
+  ctaSecondaryHref?: string;
+  badge?: string;
+  dark?: boolean;
+  centred?: boolean;
+  stats?: Array<{ value: string; label: string }>;
+}
+
+const {
+  title,
+  titleAccent,
+  subtitle,
+  ctaPrimaryText = 'Check If You\'re Owed Money',
+  ctaPrimaryHref = '/pcp-claims/',
+  ctaSecondaryText,
+  ctaSecondaryHref,
+  badge,
+  dark = true,
+  centred = true,
+  stats,
+} = Astro.props;
+---
+
+<section class={`relative overflow-hidden ${dark ? 'gradient-hero text-white' : 'bg-white'}`}>
+  <!-- Background: large watermark running figure (brand mascot, subtle) -->
+  {dark && (
+    <div class="absolute inset-y-0 right-0 w-1/2 flex items-center justify-end pointer-events-none select-none overflow-hidden" aria-hidden="true">
+      <!-- Oversized brand runner silhouette as decorative watermark -->
+      <svg viewBox="0 0 200 280" class="h-full max-h-[520px] opacity-[0.04] translate-x-16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Head -->
+        <circle cx="130" cy="28" r="22" fill="white"/>
+        <!-- Torso -->
+        <path d="M130 50 L108 100 L90 155" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- Arms — one raised with banknote, one back -->
+        <path d="M115 72 L70 58" stroke="white" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <path d="M115 72 L155 50" stroke="white" stroke-width="14" stroke-linecap="round" fill="none"/>
+        <!-- Banknote in raised hand -->
+        <rect x="148" y="24" width="46" height="28" rx="6" fill="white"/>
+        <line x1="155" y1="38" x2="187" y2="38" stroke="#1B2A4A" stroke-width="4"/>
+        <!-- Legs running -->
+        <path d="M108 100 L130 155 L118 190" stroke="white" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <path d="M108 100 L82 148 L100 190" stroke="white" stroke-width="16" stroke-linecap="round" fill="none"/>
+        <!-- Feet -->
+        <path d="M118 190 L148 195" stroke="white" stroke-width="12" stroke-linecap="round" fill="none"/>
+        <path d="M100 190 L72 200" stroke="white" stroke-width="12" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+  )}
+
+  <!-- Decorative green accent blob top-right -->
+  {dark && (
+    <div class="absolute top-0 right-0 w-80 h-80 bg-[#2D6B2D] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3" aria-hidden="true"></div>
+  )}
+  <!-- Bottom-left subtle blob -->
+  {dark && (
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#2D6B2D] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3" aria-hidden="true"></div>
+  )}
+
+  <div class="container-wide relative z-10 py-20 md:py-28 lg:py-32">
+    <div class={`${centred ? 'text-center max-w-4xl mx-auto' : 'max-w-3xl'}`}>
+      
+      {badge && (
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2D6B2D]/10 border border-[#2D6B2D]/20 mb-6">
+          <span class="w-2 h-2 rounded-full bg-[#2D6B2D] animate-pulse"></span>
+          <span class={`text-sm font-semibold ${dark ? 'text-[#2D6B2D]' : 'text-[#1E5A1E]'}`}>{badge}</span>
+        </div>
+      )}
+
+      <h1 class={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 ${dark ? 'text-white' : 'text-[#1B2A4A]'}`}>
+        {title}
+        {titleAccent && <span class="text-[#2D6B2D]"> {titleAccent}</span>}
+      </h1>
+
+      <p class={`text-lg md:text-xl leading-relaxed mb-8 ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+        {subtitle}
+      </p>
+
+      <div class={`flex flex-col sm:flex-row gap-4 ${centred ? 'justify-center' : ''}`}>
+        <a href={ctaPrimaryHref} class="btn-primary text-base px-8 py-4 text-lg">
+          {ctaPrimaryText}
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+        {ctaSecondaryText && ctaSecondaryHref && (
+          <a href={ctaSecondaryHref} class={`btn-white text-base px-8 py-4 text-lg ${dark ? '' : 'btn-secondary'}`}>
+            {ctaSecondaryText}
+          </a>
+        )}
+      </div>
+
+      {stats && stats.length > 0 && (
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+          {stats.map((stat) => (
+            <div class="text-center">
+              <div class="text-3xl font-black text-[#2D6B2D]">{stat.value}</div>
+              <div class={`text-sm mt-1 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

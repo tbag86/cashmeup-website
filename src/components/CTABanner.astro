@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  ctaSecondaryText?: string;
+  ctaSecondaryHref?: string;
+  variant?: 'green' | 'navy' | 'gradient';
+}
+
+const {
+  title,
+  subtitle,
+  ctaText = 'Check If You\'re Owed Money',
+  ctaHref = '/pcp-claims/',
+  ctaSecondaryText,
+  ctaSecondaryHref,
+  variant = 'gradient',
+} = Astro.props;
+
+const bgClass = variant === 'green'
+  ? 'bg-[#2D6B2D]'
+  : variant === 'navy'
+  ? 'bg-[#1B2A4A]'
+  : 'gradient-hero';
+---
+
+<section class={`${bgClass} py-16 md:py-20`}>
+  <div class="container-wide text-center">
+    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">{title}</h2>
+    {subtitle && <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">{subtitle}</p>}
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={ctaHref} class="btn-primary text-lg px-8 py-4">
+        {ctaText}
+        <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+        </svg>
+      </a>
+      {ctaSecondaryText && ctaSecondaryHref && (
+        <a href={ctaSecondaryHref} class="btn-white text-lg px-8 py-4">
+          {ctaSecondaryText}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

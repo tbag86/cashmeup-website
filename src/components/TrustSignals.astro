@@ -1,0 +1,69 @@
+---
+export interface Props {
+  variant?: 'light' | 'dark' | 'alt';
+  title?: string;
+}
+
+const { variant = 'light', title } = Astro.props;
+
+const signals = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
+    title: '100% Free to You',
+    description: 'You never pay a penny. We earn from our regulated partners, not from you.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>`,
+    title: 'No Win, No Fee',
+    description: 'If your claim isn\'t successful, you owe absolutely nothing to anyone.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 5h2" /></svg>`,
+    title: 'FCA-Regulated Partners',
+    description: 'All claims handled by fully regulated claims management companies.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>`,
+    title: 'Your Data is Safe',
+    description: 'We\'re fully GDPR compliant. Your information is never sold to third parties.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+    title: '2-Minute Application',
+    description: 'Quick and simple form — we handle everything else from start to finish.',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>`,
+    title: 'Thousands Claiming',
+    description: 'Join thousands of UK consumers already checking if they\'re owed money.',
+  },
+];
+
+const bgClass = variant === 'dark' ? 'bg-[#1B2A4A]' : variant === 'alt' ? 'bg-[#F5F7FA]' : 'bg-white';
+const titleClass = variant === 'dark' ? 'text-white' : 'text-[#1B2A4A]';
+const cardClass = variant === 'dark' ? 'bg-white/10 border-white/10' : 'bg-white border-slate-100 shadow-sm';
+const textClass = variant === 'dark' ? 'text-slate-300' : 'text-slate-600';
+const descClass = variant === 'dark' ? 'text-slate-400' : 'text-slate-500';
+const iconClass = variant === 'dark' ? 'text-[#2D6B2D]' : 'text-[#2D6B2D]';
+---
+
+<section class={`section-padding ${bgClass}`}>
+  <div class="container-wide">
+    {title && (
+      <div class="text-center mb-12">
+        <h2 class={`text-3xl md:text-4xl font-black mb-4 ${titleClass}`}>{title}</h2>
+      </div>
+    )}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {signals.map((signal) => (
+        <div class={`rounded-xl border p-6 flex items-start gap-4 ${cardClass}`}>
+          <div class={`flex-shrink-0 w-12 h-12 rounded-lg bg-[#2D6B2D]/10 flex items-center justify-center ${iconClass}`} set:html={signal.icon} />
+          <div>
+            <h3 class={`font-bold text-base mb-1 ${titleClass}`}>{signal.title}</h3>
+            <p class={`text-sm leading-relaxed ${descClass}`}>{signal.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

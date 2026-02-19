@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import StepProcess from '../components/StepProcess.astro';
+import CTABanner from '../components/CTABanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import SignupForm from '../components/SignupForm.astro';
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Cash Me Up!',
+  url: 'https://cashmeup.co.uk',
+  logo: 'https://cashmeup.co.uk/favicon.svg',
+  description: 'Cash Me Up! helps UK consumers claim money they are owed, access grants, and get cashback — completely free of charge.',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: 'GB',
+  },
+  sameAs: [],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Cash Me Up!',
+  url: 'https://cashmeup.co.uk',
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: 'https://cashmeup.co.uk/blog/?q={search_term_string}',
+    },
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const heroStats = [
+  { value: '£1,000s', label: 'Average PCP claim value' },
+  { value: '40M+', label: 'Affected UK car finance agreements' },
+  { value: '100%', label: 'Free to consumers' },
+];
+
+const steps = [
+  {
+    number: '1',
+    title: 'Check Your Eligibility',
+    description: 'Answer a few simple questions about your car finance history. Takes less than 2 minutes and there\'s absolutely no obligation.',
+  },
+  {
+    number: '2',
+    title: 'We Handle Everything',
+    description: 'Our regulated partners review your case, gather the evidence, and submit your claim — you don\'t need to do a thing.',
+  },
+  {
+    number: '3',
+    title: 'You Get Paid',
+    description: 'If your claim is successful, the compensation goes straight to you. No hidden fees. No deductions from your payout.',
+  },
+];
+
+const homepageFAQs = [
+  {
+    question: 'What is Cash Me Up! and how does it work?',
+    answer: 'Cash Me Up! is a free platform that helps UK consumers access money they\'re owed through claims, grants, and cashback opportunities. We partner with regulated claims management companies and refer your details to them at no cost to you. We earn a referral commission from our partners — you never pay anything.',
+  },
+  {
+    question: 'Is Cash Me Up! really free? What\'s the catch?',
+    answer: 'Yes, it\'s genuinely free to you — always. There is no catch. Our business model is based on referral commissions paid by our regulated partners, not by consumers. You will never be asked to pay anything to use our service, and if your claim is unsuccessful, you owe nothing to anyone.',
+  },
+  {
+    question: 'What is a PCP claim?',
+    answer: 'A PCP (Personal Contract Purchase) claim relates to the widespread mis-selling of car finance in the UK. If you had PCP or HP car finance between roughly 2007 and 2021, your lender may have secretly paid your car dealer a hidden commission that led you to pay more interest than you should have. The Financial Conduct Authority (FCA) found this practice to be widespread, and millions of consumers may be owed compensation — potentially £1,000s each.',
+  },
+  {
+    question: 'How do I know if I\'m eligible for a PCP claim?',
+    answer: 'You may be eligible if you took out a PCP or HP (Hire Purchase) car finance agreement between 2007 and 2021 in the UK. The key question is whether your dealer received a discretionary commission from the lender — a practice that was banned by the FCA in January 2021. Most people who had car finance during this period could be eligible. You can check your eligibility on our <a href="/pcp-claims/eligibility/" class="text-[#2D6B2D] hover:underline">PCP Eligibility page</a>.',
+  },
+  {
+    question: 'What else is coming to Cash Me Up! beyond PCP claims?',
+    answer: 'We\'re building a comprehensive platform for UK consumers. Coming soon: government grants and funding (energy efficiency, home improvement, business grants), cashback on everyday shopping, exclusive member discounts, and alerts when new compensation schemes go live. Join as a free member to be the first to know.',
+  },
+  {
+    question: 'How is my personal data protected?',
+    answer: 'We take data protection seriously. We are fully compliant with UK GDPR and the Data Protection Act 2018. Your information is stored securely and is only shared with our regulated claims management partners for the purpose of processing your claim or enquiry. We never sell your data to third parties. See our <a href="/privacy-policy/" class="text-[#2D6B2D] hover:underline">Privacy Policy</a> for full details.',
+  },
+  {
+    question: 'How long does a PCP claim take?',
+    answer: 'PCP claims are currently taking longer than usual due to the FCA\'s industry-wide review, which paused the standard 8-week complaint response window. The FCA is expected to provide final guidance in 2025, after which claims should progress more quickly. Our partners will keep you updated throughout the process.',
+  },
+  {
+    question: 'Do I need any documents or paperwork to start a PCP claim?',
+    answer: 'No. You don\'t need to dig out old paperwork to begin. Simply fill in our quick form with your basic details and our partners can begin tracing your finance agreements. They have the tools and expertise to locate your agreements even if you don\'t have the original documents.',
+  },
+];
+---
+
+<BaseLayout
+  title="Free Money. Seriously. | Cash Me Up! — PCP Claims & Free Money for UK Consumers"
+  description="Cash Me Up! helps UK consumers claim money they're owed — starting with PCP car finance claims worth £1,000s. 100% free. No win, no fee. Check if you're owed money today."
+  keywords="PCP claims, PCP mis-selling, car finance claims, free PCP check, Cash Me Up, free money UK, car finance compensation"
+  schema={[orgSchema, websiteSchema]}
+>
+  <!-- Hero -->
+  <Hero
+    title="Free Money."
+    titleAccent="Seriously."
+    subtitle="Millions of UK consumers are owed money from mis-sold car finance. Cash Me Up! makes it simple — and completely free — to find out if you're one of them. No win, no fee. No hidden costs. Ever."
+    ctaPrimaryText="Check If You're Owed Money"
+    ctaPrimaryHref="/pcp-claims/"
+    ctaSecondaryText="Learn How It Works"
+    ctaSecondaryHref="/pcp-claims/how-it-works/"
+    badge="PCP Claims Now Open"
+    stats={heroStats}
+  />
+
+  <!-- Trust Signals -->
+  <TrustSignals title="Why Thousands Trust Cash Me Up!" variant="alt" />
+
+  <!-- How It Works -->
+  <StepProcess
+    title="Getting Your Money Back is Simple"
+    subtitle="We've stripped away all the complexity. Three steps and we handle the rest."
+    steps={steps}
+  />
+
+  <!-- PCP Claims Feature Section -->
+  <section class="section-padding section-alt">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <span class="badge mb-4 inline-block">Most Popular</span>
+          <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-6">
+            Could You Be Owed <span class="text-[#2D6B2D]">£1,000s</span> in PCP Compensation?
+          </h2>
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Between 2007 and 2021, millions of UK consumers took out PCP (Personal Contract Purchase) or HP car finance. Many were charged higher interest rates than necessary because lenders were secretly paying dealers hidden commissions — a practice the FCA found to be widespread and potentially unlawful.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-6">
+            The FCA's motor finance review found that this discretionary commission model (DCM) affected an enormous number of agreements. Independent analysts estimate the total compensation liability for lenders could run into billions of pounds.
+          </p>
+          <p class="text-slate-600 leading-relaxed mb-8">
+            If you had car finance during this period, you could be owed significant compensation. Cash Me Up! makes it completely free and straightforward to check your eligibility and start your claim.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/pcp-claims/" class="btn-primary">Start My Free Check</a>
+            <a href="/pcp-claims/how-it-works/" class="btn-secondary">How Claims Work</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-[#1B2A4A] rounded-2xl p-8 text-white">
+            <h3 class="text-xl font-bold mb-6 text-[#2D6B2D]">Quick Eligibility Check</h3>
+            <ul class="space-y-4">
+              {[
+                'Did you have PCP or HP car finance between 2007 and 2021?',
+                'Was the finance arranged through a UK dealership?',
+                'Did your lender not fully disclose how your dealer was paid?',
+                'Were you a UK resident at the time of the agreement?',
+              ].map((item, i) => (
+                <li class="flex items-start gap-3">
+                  <div class="w-6 h-6 rounded-full bg-[#2D6B2D]/20 border border-[#2D6B2D]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span class="text-[#2D6B2D] text-xs font-bold">{i + 1}</span>
+                  </div>
+                  <span class="text-slate-300 text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-6 p-4 bg-[#2D6B2D]/10 rounded-xl border border-[#2D6B2D]/20">
+              <p class="text-sm text-[#2D6B2D] font-semibold">If you answered yes to any of these, you may well be eligible for compensation.</p>
+            </div>
+            <a href="/pcp-claims/eligibility/" class="btn-primary w-full mt-5 text-center block">
+              Check My Full Eligibility →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Section -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="badge mb-4 inline-block">Coming Soon</span>
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">More Ways to Get Money Back</h2>
+        <p class="text-slate-600 text-lg">PCP claims are just the beginning. We're building the UK's most comprehensive free money platform.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>',
+            title: 'Grants & Funding',
+            description: 'UK government grants for home improvements, energy efficiency, business start-up, and more. We match you to grants you qualify for.',
+            badge: 'Coming Q2 2025',
+          },
+          {
+            icon: '<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>',
+            title: 'Cashback & Discounts',
+            description: 'Earn cashback on your everyday shopping and access exclusive member discounts across hundreds of UK retailers.',
+            badge: 'Coming Q3 2025',
+          },
+          {
+            icon: '<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>',
+            title: 'Claims Alerts',
+            description: 'Be the first to know when new compensation schemes go live — energy mis-selling, bank charges, travel claims, and more.',
+            badge: 'Coming Q4 2025',
+          },
+        ].map((item) => (
+          <div class="card-hover">
+            <div class="w-12 h-12 rounded-xl bg-[#2D6B2D]/10 flex items-center justify-center text-[#2D6B2D] mb-4" set:html={item.icon} />
+            <span class="badge text-xs mb-3 inline-block">{item.badge}</span>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-2">{item.title}</h3>
+            <p class="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Member Signup Section -->
+  <section class="section-padding bg-[#1B2A4A]" id="join">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+            Join Free. Get <span class="text-[#2D6B2D]">Early Access</span> to Everything.
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-8">
+            Become a Cash Me Up! member — it's completely free and always will be. As a member, you'll get first access to every new money-saving opportunity we launch, personalised alerts based on your profile, and exclusive member-only deals.
+          </p>
+          <ul class="space-y-3">
+            {[
+              'Instant notification when PCP claims portal opens',
+              'Early access to new grant and cashback schemes',
+              'Personalised money-saving opportunities',
+              'Exclusive member deals and discounts',
+              'Free forever — no subscription, no credit card',
+            ].map((item) => (
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-[#2D6B2D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-slate-300 text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Create Your Free Account</h3>
+          <p class="text-slate-500 text-sm mb-6">No payment required. Unsubscribe any time.</p>
+          <SignupForm />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQSection
+    title="Frequently Asked Questions"
+    subtitle="Everything you need to know about Cash Me Up! and how we can help you."
+    faqs={homepageFAQs}
+  />
+
+  <!-- Final CTA -->
+  <CTABanner
+    title="Ready to Check If You're Owed Money?"
+    subtitle="It takes less than 2 minutes. It's completely free. And you could be owed £1,000s."
+    ctaText="Check My PCP Claim Now"
+    ctaHref="/pcp-claims/"
+    ctaSecondaryText="Learn More"
+    ctaSecondaryHref="/pcp-claims/how-it-works/"
+  />
+</BaseLayout>
