@@ -5,6 +5,7 @@ const navLinks = [
   { href: '/pcp-claims/how-it-works/', label: 'How It Works' },
   { href: '/about/', label: 'About' },
   { href: '/blog/', label: 'Blog' },
+  { href: '/join/', label: 'Join Free' },
   { href: '/contact/', label: 'Contact' },
 ];
 
@@ -64,6 +65,9 @@ function isActive(linkHref: string): boolean {
 
       <!-- Desktop CTA -->
       <div class="hidden lg:flex items-center gap-3">
+        <a href="/join/" class="btn-secondary text-sm">
+          Join Free
+        </a>
         <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">
           Check If You're Owed Money
         </a>
@@ -112,6 +116,7 @@ function isActive(linkHref: string): boolean {
         ))}
       </ul>
       <div class="flex flex-col gap-3 mt-4 pt-4 border-t border-slate-100">
+        <a href="/join/" class="btn-secondary text-sm text-center">Join Free</a>
         <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm text-center">Check If You're Owed Money</a>
       </div>
     </div>
