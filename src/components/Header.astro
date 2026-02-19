@@ -10,17 +10,17 @@ const navLinks = [
 
 const currentPath = Astro.url.pathname;
 
-// Determine active link — exact match takes priority, then startsWith but NOT a more-specific nav link match
+// Determine active link — exact match or startsWith, but NOT if a more-specific nav link also matches
 function isActive(linkHref: string): boolean {
   if (linkHref === '/') return currentPath === '/';
-  // Exact match
+  // Exact match always wins
   if (currentPath === linkHref) return true;
-  // Only use startsWith if NO more specific nav link matches exactly
+  // startsWith only if NO other navLink is a more specific match for the current path
   if (currentPath.startsWith(linkHref)) {
-    // Check if a more-specific navLink matches exactly
-    const moreSpecific = navLinks.some(l => l.href !== linkHref && l.href.startsWith(linkHref) && currentPath === l.href);
-    if (moreSpecific) return false;
-    return true;
+    const moreSpecificMatch = navLinks.some(
+      (l) => l.href !== linkHref && currentPath.startsWith(l.href) && l.href.length > linkHref.length
+    );
+    return !moreSpecificMatch;
   }
   return false;
 }
@@ -64,14 +64,8 @@ function isActive(linkHref: string): boolean {
 
       <!-- Desktop CTA -->
       <div class="hidden lg:flex items-center gap-3">
-        <a href="/join/" class="btn-primary text-sm">
-          <svg class="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-          </svg>
-          Join Free
-        </a>
-        <a href="/pcp-claims/" class="btn-secondary text-sm">
-          Check PCP Claim
+        <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">
+          Check If You're Owed Money
         </a>
       </div>
 
@@ -118,8 +112,7 @@ function isActive(linkHref: string): boolean {
         ))}
       </ul>
       <div class="flex flex-col gap-3 mt-4 pt-4 border-t border-slate-100">
-        <a href="/pcp-claims/" class="btn-primary text-sm text-center">Check My PCP Claim</a>
-        <a href="/join/" class="btn-secondary text-sm text-center">Join Free</a>
+        <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm text-center">Check If You're Owed Money</a>
       </div>
     </div>
   </div>

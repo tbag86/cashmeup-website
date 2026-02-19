@@ -13,7 +13,7 @@ const {
   title,
   subtitle,
   ctaText = 'Check If You\'re Owed Money',
-  ctaHref = '/pcp-claims/',
+  ctaHref = 'https://www.mypcpclaimuk.com/',
   ctaSecondaryText,
   ctaSecondaryHref,
   variant = 'gradient',
@@ -31,7 +31,7 @@ const bgClass = variant === 'green'
     <h2 class="text-3xl md:text-4xl font-black text-white mb-4">{title}</h2>
     {subtitle && <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">{subtitle}</p>}
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href={ctaHref} class="btn-primary text-lg px-8 py-4">
+      <a href={ctaHref} target={ctaHref.startsWith('http') ? '_blank' : undefined} rel={ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined} class="btn-primary text-lg px-8 py-4">
         {ctaText}
         <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
