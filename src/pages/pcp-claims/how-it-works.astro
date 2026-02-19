@@ -12,11 +12,11 @@ const breadcrumbs = [
 const timelineFAQs = [
   {
     question: 'How long will my PCP claim take?',
-    answer: 'Currently, PCP claims are taking longer than normal. The FCA\'s industry-wide review paused the standard 8-week complaint response window for lenders. Most claims are expected to progress significantly once the FCA issues its final guidance and the Supreme Court delivers its ruling (expected 2025). Your claims partner will keep you updated throughout the process.',
+    answer: 'Currently, PCP claims are taking longer than normal. The regulator\'s industry-wide review paused the standard 8-week complaint response window for lenders. Most claims are expected to progress significantly once the regulator issues its final guidance and the Supreme Court delivers its ruling (expected 2025). Your claims partner will keep you updated throughout the process.',
   },
   {
-    question: 'What is the FCA motor finance review and how does it affect my claim?',
-    answer: 'In January 2024, the FCA launched a formal review into DCAs in motor finance. The regulator found that lenders may have breached FCA rules and that consumers may have been overcharged. In May 2024, the FCA paused the 8-week complaint response window to allow a coordinated industry response. Three Court of Appeal rulings in October 2024 found in favour of consumers. A Supreme Court hearing is expected to provide the definitive legal outcome.',
+    question: 'What is the regulator motor finance review and how does it affect my claim?',
+    answer: 'In January 2024, the regulator launched a formal review into DCAs in motor finance. The regulator found that lenders may have breached the regulator rules and that consumers may have been overcharged. In May 2024, the regulator paused the 8-week complaint response window to allow a coordinated industry response. Three Court of Appeal rulings in October 2024 found in favour of consumers. A Supreme Court hearing is expected to provide the definitive legal outcome.',
   },
   {
     question: 'Do I have to deal with the lender directly?',
@@ -46,18 +46,18 @@ const timelineFAQs = [
 ---
 
 <BaseLayout
-  title="How PCP Claims Work — Step by Step Guide | Cash Me Up!"
-  description="Understand exactly how PCP car finance claims work in the UK. From the FCA investigation to receiving compensation — the full process explained clearly. Free to start."
-  keywords="how PCP claims work, PCP claim process, FCA motor finance review, PCP compensation process, car finance complaint"
+  title="How PCP Claims Work — Step by Step Guide | Cash Me Up"
+  description="Understand exactly how PCP car finance claims work in the UK. From the regulator investigation to receiving compensation — the full process explained clearly. Free to start."
+  keywords="how PCP claims work, PCP claim process, the regulator motor finance review, PCP compensation process, car finance complaint"
 >
   <Breadcrumbs items={breadcrumbs} />
 
   <!-- Hero -->
   <section class="gradient-hero text-white section-padding">
     <div class="container-wide text-center">
-      <span class="badge mb-6 inline-block">Step-by-Step Guide</span>
-      <h1 class="text-4xl md:text-5xl font-black mb-6">How PCP Claims Work</h1>
-      <p class="text-slate-300 text-xl max-w-3xl mx-auto leading-relaxed">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6 text-sm font-semibold text-white">Step-by-Step Guide</span>
+      <h1 class="text-4xl md:text-5xl font-black mb-6 text-white">How PCP Claims Work</h1>
+      <p class="text-white/85 text-xl max-w-3xl mx-auto leading-relaxed">
         From checking your eligibility to receiving compensation — here's everything you need to know about the PCP claims process, explained in plain English.
       </p>
     </div>
@@ -72,7 +72,7 @@ const timelineFAQs = [
         <p>When you bought a car on finance at a dealership, the dealer acted as a credit broker — essentially arranging the loan on your behalf. The finance company paid the dealer a commission for doing so. That's perfectly normal in financial services.</p>
         <p>The problem arose from how that commission was calculated. Under Discretionary Commission Arrangements (DCAs), the dealer had the power to increase your interest rate above the minimum the finance company required. Every extra percentage point of interest you paid went towards a bigger commission for the dealer.</p>
         <p>So the salesperson helping you buy your car had a direct financial incentive to make you pay more. And crucially, they didn't tell you. You had no idea your dealer was being paid more for charging you higher interest. You had no opportunity to negotiate or seek a better deal.</p>
-        <p>The Financial Conduct Authority (FCA) investigated and found this practice to be widespread across the industry. In January 2021, DCAs were banned. In 2024, the FCA launched a formal review and three Court of Appeal judges ruled that lenders who paid such commissions without proper disclosure had acted unlawfully.</p>
+        <p>The financial regulator investigated and found this practice to be widespread across the industry. In January 2021, DCAs were banned. In 2024, the regulator launched a formal review and three Court of Appeal judges ruled that lenders who paid such commissions without proper disclosure had acted unlawfully.</p>
       </div>
     </div>
   </section>
@@ -105,14 +105,14 @@ const timelineFAQs = [
             step: '03',
             title: 'Formal Complaint Submitted',
             duration: 'Within days of onboarding',
-            description: 'Your partner drafts and submits formal complaints to each relevant lender on your behalf. These complaints are based on FCA guidance and case law, and lay out clearly why the commission arrangement was unlawful and why you\'re entitled to compensation.',
+            description: 'Your partner drafts and submits formal complaints to each relevant lender on your behalf. These complaints are based on the regulator guidance and case law, and lay out clearly why the commission arrangement was unlawful and why you\'re entitled to compensation.',
             colour: 'bg-[#2D6B2D]',
           },
           {
             step: '04',
             title: 'Lender Investigates',
-            duration: 'Currently paused by FCA',
-            description: 'The lender is required to investigate your complaint. Normally this takes up to 8 weeks, but the FCA has extended this deadline during its industry-wide review. Lenders may respond earlier with an offer, reject the claim, or wait for FCA guidance.',
+            duration: 'Currently paused by the regulator',
+            description: 'The lender is required to investigate your complaint. Normally this takes up to 8 weeks, but the regulator has extended this deadline during its industry-wide review. Lenders may respond earlier with an offer, reject the claim, or wait for the regulator guidance.',
             colour: 'bg-[#1B2A4A]',
           },
           {
@@ -133,7 +133,7 @@ const timelineFAQs = [
             step: '07',
             title: 'You Get Paid',
             duration: 'After acceptance',
-            description: 'The compensation is paid directly to you by the lender. Your claims management partner receives their success fee (a percentage of the compensation, agreed upfront). You keep the rest. Through Cash Me Up!, you\'re never charged anything — the partner\'s fee comes from the compensation.',
+            description: 'The compensation is paid directly to you by the lender. Your claims management partner receives their success fee (a percentage of the compensation, agreed upfront). You keep the rest. Through Cash Me Up, you\'re never charged anything — the partner\'s fee comes from the compensation.',
             colour: 'bg-[#2D6B2D]',
           },
         ].map((item) => (
@@ -162,7 +162,7 @@ const timelineFAQs = [
         <p class="text-lg">You've probably seen the phrase "no win, no fee" used in legal and claims advertising. For PCP claims, it means exactly what it says — but there are some important details worth understanding.</p>
         <p><strong class="text-[#1B2A4A]">If your claim is unsuccessful:</strong> You pay absolutely nothing. Not to the claims company, not to anyone. The entire risk is absorbed by the claims management company. This is why choosing a reputable, regulated partner matters.</p>
         <p><strong class="text-[#1B2A4A]">If your claim is successful:</strong> The claims management company takes a success fee — typically a percentage of the compensation received. This percentage should be clearly explained to you before you sign anything. It's usually in the range of 20–40% plus VAT, depending on the company and the complexity of the claim.</p>
-        <p><strong class="text-[#1B2A4A]">Cash Me Up!'s role:</strong> We are a referral service, not a claims company ourselves. We pass your details to our regulated partners for free. We earn a referral commission from our partners — you are never charged anything by Cash Me Up!, at any stage, under any circumstances.</p>
+        <p><strong class="text-[#1B2A4A]">Cash Me Up's role:</strong> We are a referral service, not a claims company ourselves. We pass your details to our regulated partners for free. We earn a referral commission from our partners — you are never charged anything by Cash Me Up, at any stage, under any circumstances.</p>
       </div>
     </div>
   </section>
@@ -176,7 +176,7 @@ const timelineFAQs = [
     title="Ready to Start Your PCP Claim?"
     subtitle="The process is straightforward and completely free to begin. Check your eligibility today."
     ctaText="Start My Free PCP Check"
-    ctaHref="/pcp-claims/#claim-form"
+    ctaHref="https://www.mypcpclaimuk.com/"
     ctaSecondaryText="Check My Eligibility"
     ctaSecondaryHref="/pcp-claims/eligibility/"
   />

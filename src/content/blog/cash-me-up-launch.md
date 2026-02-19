@@ -1,19 +1,19 @@
 ---
-title: "Cash Me Up! Launch: Free Money Opportunities Coming to the UK"
-description: "We're launching Cash Me Up! — the UK's new free platform for consumers to claim money they're owed, access grants, and get cashback. Here's our story, our mission, and what we're building."
+title: "Cash Me Up Launch: Free Money Opportunities Coming to the UK"
+description: "We're launching Cash Me Up — the UK's new free platform for consumers to claim money they're owed, access grants, and get cashback. Here's our story, our mission, and what we're building."
 pubDate: 2025-02-01
-author: "Cash Me Up! Team"
+author: "Cash Me Up Team"
 category: "Company News"
 tags: ["launch", "about", "Cash Me Up", "free money", "PCP claims", "grants"]
 featured: true
 readTime: "6 min read"
 ---
 
-Today, we're launching Cash Me Up! — and we think it's something genuinely different.
+Today, we're launching Cash Me Up — and we think it's something genuinely different.
 
 The UK is full of money that's sitting in the wrong pockets. Billions of pounds in compensation owed to car finance customers. Millions of pounds in government grants that go unclaimed every year. Cashback and savings that most people never access because nobody told them how.
 
-We're here to change that. Cash Me Up! is a platform that helps ordinary UK consumers find and access all of this — for free, forever.
+We're here to change that. Cash Me Up is a platform that helps ordinary UK consumers find and access all of this — for free, forever.
 
 ## Why We Built This
 
@@ -23,13 +23,13 @@ The PPI scandal. Packaged bank account mis-selling. Interest rate swap mis-selli
 
 Every single time, the pattern is the same. Financial companies exploit complexity and information asymmetry — the fact that most people don't have time to read every clause of every financial product they use. And when the regulator eventually catches up, the compensation process is complicated, slow, and designed in ways that many consumers find confusing.
 
-Cash Me Up! exists to be the bridge. We do the work of understanding the rules, identifying the opportunities, and connecting consumers with the right regulated partners — so you can claim what you're owed without becoming a financial expert yourself.
+Cash Me Up exists to be the bridge. We do the work of understanding the rules, identifying the opportunities, and connecting consumers with the right regulated partners — so you can claim what you're owed without becoming a financial expert yourself.
 
 ## Starting With PCP Claims
 
 We're launching with a focus on PCP car finance claims because the opportunity is enormous and the window is now.
 
-If you had PCP or HP car finance between 2007 and 2021, you were likely affected by discretionary commission arrangements — a practice the FCA found to be widespread and potentially unlawful. The Court of Appeal ruled in October 2024 that undisclosed dealer commissions were unlawful, and most legal observers expect the Supreme Court to uphold this finding in 2025.
+If you had PCP or HP car finance between 2007 and 2021, you were likely affected by discretionary commission arrangements — a practice the regulator found to be widespread and potentially unlawful. The Court of Appeal ruled in October 2024 that undisclosed dealer commissions were unlawful, and most legal observers expect the Supreme Court to uphold this finding in 2025.
 
 The result could be billions of pounds returned to UK consumers — one of the largest consumer compensation events in UK history.
 
@@ -62,7 +62,7 @@ Combined with exclusive member discounts negotiated with top UK brands, this cou
 
 New compensation schemes and claim opportunities emerge regularly. Energy mis-selling. Overcharged bank fees. Holiday claim windows. Most people find out about these opportunities too late — after the window has closed.
 
-Cash Me Up! members will receive instant alerts when new opportunities launch, with personalised matching based on their profile. Be first in line, every time.
+Cash Me Up members will receive instant alerts when new opportunities launch, with personalised matching based on their profile. Be first in line, every time.
 
 ## Our Promise to You
 

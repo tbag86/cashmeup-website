@@ -31,7 +31,7 @@ const articleSchema = {
   },
   publisher: {
     '@type': 'Organization',
-    name: 'Cash Me Up!',
+    name: 'Cash Me Up',
     url: 'https://cashmeup.co.uk',
   },
   datePublished: post.data.pubDate.toISOString(),
@@ -51,7 +51,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString('en-GB', {
 ---
 
 <BaseLayout
-  title={`${post.data.title} | Cash Me Up! Blog`}
+  title={`${post.data.title} | Cash Me Up Blog`}
   description={post.data.description}
   schema={articleSchema}
 >

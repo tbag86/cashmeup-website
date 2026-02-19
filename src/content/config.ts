@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    author: z.string().default('Cash Me Up! Team'),
+    author: z.string().default('Cash Me Up Team'),
     category: z.string().default('News'),
     tags: z.array(z.string()).default([]),
     featured: z.boolean().default(false),

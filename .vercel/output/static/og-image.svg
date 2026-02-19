@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#1B2A4A"/>
+  <!-- Subtle pattern overlay -->
+  <rect width="1200" height="630" fill="url(#dots)" opacity="0.06"/>
+  <defs>
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="white"/>
+    </pattern>
+  </defs>
+  <!-- Green accent blobs -->
+  <circle cx="1100" cy="80" r="200" fill="#2D6B2D" opacity="0.15"/>
+  <circle cx="100" cy="580" r="180" fill="#2D6B2D" opacity="0.1"/>
+  <!-- Logo area — white pill -->
+  <rect x="80" y="70" width="320" height="90" rx="16" fill="white" opacity="0.97"/>
+  <!-- Logo text (fallback since we can't embed png) -->
+  <text x="240" y="128" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#2D6B2D" text-anchor="middle" letter-spacing="-1">CASH ME UP</text>
+  <!-- Main headline -->
+  <text x="80" y="260" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="white" letter-spacing="-2">Free Money.</text>
+  <text x="80" y="350" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="#2D6B2D" letter-spacing="-2">Seriously.</text>
+  <!-- Subtext -->
+  <text x="80" y="420" font-family="Arial, sans-serif" font-size="28" fill="#94A3B8">Millions of UK consumers could be owed £1,000s</text>
+  <text x="80" y="458" font-family="Arial, sans-serif" font-size="28" fill="#94A3B8">in PCP car finance compensation. Check for free.</text>
+  <!-- CTA pill -->
+  <rect x="80" y="500" width="380" height="70" rx="12" fill="#2D6B2D"/>
+  <text x="270" y="543" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="white" text-anchor="middle">cashmeup.co.uk</text>
+  <!-- Stats on right -->
+  <rect x="720" y="200" width="200" height="120" rx="16" fill="white" opacity="0.08"/>
+  <text x="820" y="258" font-family="Arial Black, sans-serif" font-size="44" font-weight="900" fill="#2D6B2D" text-anchor="middle">£1,000s</text>
+  <text x="820" y="292" font-family="Arial, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">Avg claim value</text>
+  <rect x="950" y="200" width="200" height="120" rx="16" fill="white" opacity="0.08"/>
+  <text x="1050" y="258" font-family="Arial Black, sans-serif" font-size="44" font-weight="900" fill="#2D6B2D" text-anchor="middle">40M+</text>
+  <text x="1050" y="292" font-family="Arial, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">Agreements affected</text>
+  <rect x="720" y="350" width="430" height="120" rx="16" fill="white" opacity="0.08"/>
+  <text x="935" y="408" font-family="Arial Black, sans-serif" font-size="44" font-weight="900" fill="#2D6B2D" text-anchor="middle">100% Free</text>
+  <text x="935" y="442" font-family="Arial, sans-serif" font-size="16" fill="#94A3B8" text-anchor="middle">No win, no fee. Always.</text>
+</svg>

@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = canonical ? new URL(canonical, Astro.site) : new URL(Astro.url.pathname, Astro.site);
-const fullTitle = title.includes('Cash Me Up') ? title : `${title} | Cash Me Up! — Free PCP Claims & Money for UK Consumers`;
+const fullTitle = title.includes('Cash Me Up') ? title : `${title} | Cash Me Up — Free PCP Claims & Money for UK Consumers`;
 const ogImageURL = new URL(ogImage, Astro.site);
 
 const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
@@ -46,7 +46,7 @@ const schemaArray = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 <meta property="og:title" content={fullTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageURL} />
-<meta property="og:site_name" content="Cash Me Up!" />
+<meta property="og:site_name" content="Cash Me Up" />
 <meta property="og:locale" content="en_GB" />
 
 <!-- Twitter Card -->

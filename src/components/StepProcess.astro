@@ -41,11 +41,11 @@ const {
         <div class={`relative z-10 ${variant === 'horizontal' ? 'text-center flex flex-col items-center' : 'flex items-start gap-6'}`}>
           
           {/* Step number circle */}
-          <div class={`flex-shrink-0 w-20 h-20 rounded-full bg-[#1B2A4A] flex items-center justify-center shadow-lg mb-4 ${variant === 'vertical' ? 'mb-0' : ''}`}>
+          <div class={`flex-shrink-0 w-20 h-20 rounded-full bg-[#2D6B2D] flex items-center justify-center shadow-lg mb-4 ${variant === 'vertical' ? 'mb-0' : ''}`}>
             {step.icon ? (
-              <span class="text-[#2D6B2D] text-2xl" set:html={step.icon} />
+              <span class="text-white text-2xl" set:html={step.icon} />
             ) : (
-              <span class="text-3xl font-black text-[#2D6B2D]">{step.number}</span>
+              <span class="text-3xl font-black text-white">{step.number}</span>
             )}
           </div>
 

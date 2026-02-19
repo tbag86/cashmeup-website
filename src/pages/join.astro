@@ -8,12 +8,12 @@ const breadcrumbs = [{ label: 'Join Free' }];
 
 const joinFAQs = [
   {
-    question: 'What does Cash Me Up! membership include?',
-    answer: 'Membership is free and gives you: early access to new money-saving opportunities when they launch; personalised alerts when claims, grants, or cashback schemes match your profile; exclusive member-only deals and discounts; priority access to the Cash Me Up! platform as it grows. There\'s no subscription, no payment, and no obligation to use any service we notify you about.',
+    question: 'What does Cash Me Up membership include?',
+    answer: 'Membership is free and gives you: early access to new money-saving opportunities when they launch; personalised alerts when claims, grants, or cashback schemes match your profile; exclusive member-only deals and discounts; priority access to the Cash Me Up platform as it grows. There\'s no subscription, no payment, and no obligation to use any service we notify you about.',
   },
   {
     question: 'Is membership really free forever?',
-    answer: 'Yes. Cash Me Up! membership is and will always be free for consumers. Our business model is based on referral commissions from regulated partners — you are never charged for membership or for using any of our services.',
+    answer: 'Yes. Cash Me Up membership is and will always be free for consumers. Our business model is based on referral commissions from regulated partners — you are never charged for membership or for using any of our services.',
   },
   {
     question: 'What will you do with my email address?',
@@ -31,8 +31,8 @@ const joinFAQs = [
 ---
 
 <BaseLayout
-  title="Join Free — Get Early Access to Every Money Opportunity | Cash Me Up!"
-  description="Join Cash Me Up! free today. Get first access to PCP claims, grants, cashback, and exclusive member deals. No subscription. No credit card. Always free."
+  title="Join Free — Get Early Access to Every Money Opportunity | Cash Me Up"
+  description="Join Cash Me Up free today. Get first access to PCP claims, grants, cashback, and exclusive member deals. No subscription. No credit card. Always free."
   keywords="join Cash Me Up, free membership, Cash Me Up member benefits, early access money opportunities UK"
 >
   <Breadcrumbs items={breadcrumbs} />
@@ -40,7 +40,7 @@ const joinFAQs = [
   <section class="gradient-hero text-white section-padding">
     <div class="container-wide text-center">
       <h1 class="text-4xl md:text-5xl font-black mb-6">Join Free — Never Miss a Money Opportunity</h1>
-      <p class="text-slate-300 text-xl max-w-3xl mx-auto">Become a Cash Me Up! member in under 30 seconds. Free forever. First access to every claim, grant, cashback, and exclusive deal we launch.</p>
+      <p class="text-slate-300 text-xl max-w-3xl mx-auto">Become a Cash Me Up member in under 30 seconds. Free forever. First access to every claim, grant, cashback, and exclusive deal we launch.</p>
     </div>
   </section>
 
@@ -49,14 +49,14 @@ const joinFAQs = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <div>
           <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">Member Benefits</h2>
-          <p class="text-slate-600 text-lg mb-8 leading-relaxed">Cash Me Up! is building the UK's most comprehensive free money platform. As a member, you're always first in the door.</p>
+          <p class="text-slate-600 text-lg mb-8 leading-relaxed">Cash Me Up is building the UK's most comprehensive free money platform. As a member, you're always first in the door.</p>
           <div class="space-y-4">
             {[
               { title: 'PCP Claims — Available Now', description: 'Start your free PCP car finance claim check immediately after joining. Our regulated partners will assess your eligibility at no cost.', status: 'live' },
               { title: 'Government Grants — Coming Q2 2025', description: 'Personalised matching to UK government grants for home improvements, energy efficiency, business start-up, and more.', status: 'soon' },
               { title: 'Cashback & Discounts — Coming Q3 2025', description: 'Earn cashback on everyday shopping and access exclusive member-only discounts across hundreds of UK retailers.', status: 'soon' },
               { title: 'Claims Alerts — Coming Q4 2025', description: 'Be first to know about new compensation schemes — energy mis-selling, bank charges, holiday claims, and more.', status: 'soon' },
-              { title: 'Exclusive Member Deals — Ongoing', description: 'Partner deals and discounts available exclusively to Cash Me Up! members, with new offers added regularly.', status: 'partial' },
+              { title: 'Exclusive Member Deals — Ongoing', description: 'Partner deals and discounts available exclusively to Cash Me Up members, with new offers added regularly.', status: 'partial' },
             ].map((item) => (
               <div class="flex gap-4 p-4 rounded-xl bg-[#F5F7FA] border border-slate-100">
                 <div class={`w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0 ${item.status === 'live' ? 'bg-[#2D6B2D]' : item.status === 'partial' ? 'bg-amber-400' : 'bg-slate-300'}`}></div>

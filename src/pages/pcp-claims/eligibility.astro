@@ -40,13 +40,13 @@ const eligibilityFAQs = [
   },
   {
     question: 'What if I already made a PCP complaint directly to my lender and they rejected it?',
-    answer: 'Even if your lender rejected a previous complaint, it may be worth re-submitting or escalating to the Financial Ombudsman Service given the new Court of Appeal rulings and the FCA\'s ongoing review. The legal landscape has changed significantly since most initial complaints were rejected. A regulated claims partner can advise you on this.',
+    answer: 'Even if your lender rejected a previous complaint, it may be worth re-submitting or escalating to the Financial Ombudsman Service given the new Court of Appeal rulings and the regulator\'s ongoing review. The legal landscape has changed significantly since most initial complaints were rejected. A regulated claims partner can advise you on this.',
   },
 ];
 ---
 
 <BaseLayout
-  title="PCP Claim Eligibility Checker — Do You Qualify? | Cash Me Up!"
+  title="PCP Claim Eligibility Checker — Do You Qualify? | Cash Me Up"
   description="Find out if you qualify for a PCP car finance compensation claim. Our eligibility guide covers who qualifies, what types of agreements are covered, and how to check your specific situation."
   keywords="PCP claim eligibility, who can claim PCP, PCP eligibility checker, car finance claim eligibility, qualify PCP claim"
 >
@@ -54,9 +54,9 @@ const eligibilityFAQs = [
 
   <section class="gradient-hero text-white section-padding">
     <div class="container-wide text-center">
-      <span class="badge mb-6 inline-block">Eligibility Guide</span>
-      <h1 class="text-4xl md:text-5xl font-black mb-6">Do You Qualify for a PCP Claim?</h1>
-      <p class="text-slate-300 text-xl max-w-3xl mx-auto">
+      <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6 text-sm font-semibold text-white">Eligibility Guide</span>
+      <h1 class="text-4xl md:text-5xl font-black mb-6 text-white">Do You Qualify for a PCP Claim?</h1>
+      <p class="text-white/85 text-xl max-w-3xl mx-auto">
         Millions of UK consumers qualify — but not everyone. This guide helps you understand exactly who is eligible and why.
       </p>
     </div>
@@ -72,7 +72,7 @@ const eligibilityFAQs = [
           {
             title: 'Agreement Date',
             detail: 'Your PCP or HP agreement must have been taken out between approximately April 2007 and January 2021.',
-            why: 'The FCA banned DCAs in January 2021. Agreements after this date were subject to the new rules. The April 2007 date aligns with the introduction of FCA regulation of consumer credit.',
+            why: 'The regulator banned DCAs in January 2021. Agreements after this date were subject to the new rules. The April 2007 date aligns with the introduction of consumer credit regulation of consumer credit.',
           },
           {
             title: 'Finance Type',
@@ -87,12 +87,12 @@ const eligibilityFAQs = [
           {
             title: 'UK Residency',
             detail: 'You must have been a UK resident at the time the agreement was taken out.',
-            why: 'UK consumer credit law applies to agreements entered into by UK residents. The FCA\'s regulatory oversight applies only to UK financial services.',
+            why: 'UK consumer credit law applies to agreements entered into by UK residents. The regulator\'s regulatory oversight applies only to UK financial services.',
           },
           {
             title: 'Regulated Credit Agreement',
             detail: 'The agreement must be a regulated consumer credit agreement (as opposed to a business credit agreement over certain thresholds).',
-            why: 'FCA consumer credit regulation covers personal credit agreements. Some very high-value or purely business-use agreements fall outside this regulation.',
+            why: 'Consumer credit regulation covers personal credit agreements. Some very high-value or purely business-use agreements fall outside this regulation.',
           },
         ].map((item, i) => (
           <div class="bg-[#F5F7FA] rounded-xl p-6">
@@ -113,7 +113,7 @@ const eligibilityFAQs = [
       <div class="bg-[#1B2A4A] rounded-2xl p-8 text-center">
         <h3 class="text-2xl font-black text-white mb-4">Think You Might Qualify?</h3>
         <p class="text-slate-300 mb-6">The fastest way to find out is to submit your details. Our regulated partners will assess your specific situation for free, with no obligation.</p>
-        <a href="/pcp-claims/#claim-form" class="btn-primary text-lg px-8 py-4">
+        <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
           Start My Free Eligibility Check
           <svg class="w-5 h-5 ml-2 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -133,6 +133,6 @@ const eligibilityFAQs = [
     title="Ready to Check Your Specific Situation?"
     subtitle="Our regulated partners assess every case individually. Submit your details for a free, no-obligation assessment."
     ctaText="Check My Eligibility Free"
-    ctaHref="/pcp-claims/#claim-form"
+    ctaHref="https://www.mypcpclaimuk.com/"
   />
 </BaseLayout>

@@ -10,10 +10,10 @@ import SignupForm from '../components/SignupForm.astro';
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Cash Me Up!',
+  name: 'Cash Me Up',
   url: 'https://cashmeup.co.uk',
   logo: 'https://cashmeup.co.uk/favicon.svg',
-  description: 'Cash Me Up! helps UK consumers claim money they are owed, access grants, and get cashback — completely free of charge.',
+  description: 'Cash Me Up helps UK consumers claim money they are owed, access grants, and get cashback — completely free of charge.',
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'GB',
@@ -24,7 +24,7 @@ const orgSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Cash Me Up!',
+  name: 'Cash Me Up',
   url: 'https://cashmeup.co.uk',
   potentialAction: {
     '@type': 'SearchAction',
@@ -62,23 +62,23 @@ const steps = [
 
 const homepageFAQs = [
   {
-    question: 'What is Cash Me Up! and how does it work?',
-    answer: 'Cash Me Up! is a free platform that helps UK consumers access money they\'re owed through claims, grants, and cashback opportunities. We partner with regulated claims management companies and refer your details to them at no cost to you. We earn a referral commission from our partners — you never pay anything.',
+    question: 'What is Cash Me Up and how does it work?',
+    answer: 'Cash Me Up is a free platform that helps UK consumers access money they\'re owed through claims, grants, and cashback opportunities. We partner with regulated claims management companies and refer your details to them at no cost to you. We earn a referral commission from our partners — you never pay anything.',
   },
   {
-    question: 'Is Cash Me Up! really free? What\'s the catch?',
+    question: 'Is Cash Me Up really free? What\'s the catch?',
     answer: 'Yes, it\'s genuinely free to you — always. There is no catch. Our business model is based on referral commissions paid by our regulated partners, not by consumers. You will never be asked to pay anything to use our service, and if your claim is unsuccessful, you owe nothing to anyone.',
   },
   {
     question: 'What is a PCP claim?',
-    answer: 'A PCP (Personal Contract Purchase) claim relates to the widespread mis-selling of car finance in the UK. If you had PCP or HP car finance between roughly 2007 and 2021, your lender may have secretly paid your car dealer a hidden commission that led you to pay more interest than you should have. The Financial Conduct Authority (FCA) found this practice to be widespread, and millions of consumers may be owed compensation — potentially £1,000s each.',
+    answer: 'A PCP (Personal Contract Purchase) claim relates to the widespread mis-selling of car finance in the UK. If you had PCP or HP car finance between roughly 2007 and 2021, your lender may have secretly paid your car dealer a hidden commission that led you to pay more interest than you should have. The financial regulator found this practice to be widespread, and millions of consumers may be owed compensation — potentially £1,000s each.',
   },
   {
     question: 'How do I know if I\'m eligible for a PCP claim?',
-    answer: 'You may be eligible if you took out a PCP or HP (Hire Purchase) car finance agreement between 2007 and 2021 in the UK. The key question is whether your dealer received a discretionary commission from the lender — a practice that was banned by the FCA in January 2021. Most people who had car finance during this period could be eligible. You can check your eligibility on our <a href="/pcp-claims/eligibility/" class="text-[#2D6B2D] hover:underline">PCP Eligibility page</a>.',
+    answer: 'You may be eligible if you took out a PCP or HP (Hire Purchase) car finance agreement between 2007 and 2021 in the UK. The key question is whether your dealer received a discretionary commission from the lender — a practice that was banned by the regulator in January 2021. Most people who had car finance during this period could be eligible. You can check your eligibility on our <a href="/pcp-claims/eligibility/" class="text-[#2D6B2D] hover:underline">PCP Eligibility page</a>.',
   },
   {
-    question: 'What else is coming to Cash Me Up! beyond PCP claims?',
+    question: 'What else is coming to Cash Me Up beyond PCP claims?',
     answer: 'We\'re building a comprehensive platform for UK consumers. Coming soon: government grants and funding (energy efficiency, home improvement, business grants), cashback on everyday shopping, exclusive member discounts, and alerts when new compensation schemes go live. Join as a free member to be the first to know.',
   },
   {
@@ -87,7 +87,7 @@ const homepageFAQs = [
   },
   {
     question: 'How long does a PCP claim take?',
-    answer: 'PCP claims are currently taking longer than usual due to the FCA\'s industry-wide review, which paused the standard 8-week complaint response window. The FCA is expected to provide final guidance in 2025, after which claims should progress more quickly. Our partners will keep you updated throughout the process.',
+    answer: 'PCP claims are currently taking longer than usual due to the regulator\'s industry-wide review, which paused the standard 8-week complaint response window. The regulator is expected to provide final guidance in 2025, after which claims should progress more quickly. Our partners will keep you updated throughout the process.',
   },
   {
     question: 'Do I need any documents or paperwork to start a PCP claim?',
@@ -97,8 +97,8 @@ const homepageFAQs = [
 ---
 
 <BaseLayout
-  title="Free Money. Seriously. | Cash Me Up! — PCP Claims & Free Money for UK Consumers"
-  description="Cash Me Up! helps UK consumers claim money they're owed — starting with PCP car finance claims worth £1,000s. 100% free. No win, no fee. Check if you're owed money today."
+  title="Free Money. Seriously. | Cash Me Up — PCP Claims & Free Money for UK Consumers"
+  description="Cash Me Up helps UK consumers claim money they're owed — starting with PCP car finance claims worth £1,000s. 100% free. No win, no fee. Check if you're owed money today."
   keywords="PCP claims, PCP mis-selling, car finance claims, free PCP check, Cash Me Up, free money UK, car finance compensation"
   schema={[orgSchema, websiteSchema]}
 >
@@ -106,7 +106,7 @@ const homepageFAQs = [
   <Hero
     title="Free Money."
     titleAccent="Seriously."
-    subtitle="Millions of UK consumers are owed money from mis-sold car finance. Cash Me Up! makes it simple — and completely free — to find out if you're one of them. No win, no fee. No hidden costs. Ever."
+    subtitle="Millions of UK consumers are owed money from mis-sold car finance. Cash Me Up makes it simple — and completely free — to find out if you're one of them. No win, no fee. No hidden costs. Ever."
     ctaPrimaryText="Check If You're Owed Money"
     ctaPrimaryHref="/pcp-claims/"
     ctaSecondaryText="Learn How It Works"
@@ -116,7 +116,7 @@ const homepageFAQs = [
   />
 
   <!-- Trust Signals -->
-  <TrustSignals title="Why Thousands Trust Cash Me Up!" variant="alt" />
+  <TrustSignals title="Why Thousands Trust Cash Me Up" variant="alt" />
 
   <!-- How It Works -->
   <StepProcess
@@ -124,6 +124,32 @@ const homepageFAQs = [
     subtitle="We've stripped away all the complexity. Three steps and we handle the rest."
     steps={steps}
   />
+
+  <!-- Real photo social proof strip -->
+  <section class="bg-white py-0 overflow-hidden">
+    <div class="relative h-72 md:h-96">
+      <img
+        src="/images/hero-family.jpg"
+        alt="Real UK consumers who've reclaimed money they were owed"
+        class="w-full h-full object-cover"
+        width="1600"
+        height="400"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1B2A4A]/90 via-[#1B2A4A]/60 to-transparent flex items-center">
+        <div class="container-wide">
+          <div class="max-w-xl">
+            <p class="text-white/80 text-sm font-semibold uppercase tracking-wider mb-2">Millions of UK families affected</p>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Your family could be owed money</h2>
+            <p class="text-white/80 text-lg mb-6">Mis-sold car finance affected millions of ordinary people. The average claim is worth £1,000s — and it's completely free to check.</p>
+            <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
+              Check My Eligibility Free →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- PCP Claims Feature Section -->
   <section class="section-padding section-alt">
@@ -135,43 +161,54 @@ const homepageFAQs = [
             Could You Be Owed <span class="text-[#2D6B2D]">£1,000s</span> in PCP Compensation?
           </h2>
           <p class="text-slate-600 text-lg leading-relaxed mb-6">
-            Between 2007 and 2021, millions of UK consumers took out PCP (Personal Contract Purchase) or HP car finance. Many were charged higher interest rates than necessary because lenders were secretly paying dealers hidden commissions — a practice the FCA found to be widespread and potentially unlawful.
-          </p>
-          <p class="text-slate-600 leading-relaxed mb-6">
-            The FCA's motor finance review found that this discretionary commission model (DCM) affected an enormous number of agreements. Independent analysts estimate the total compensation liability for lenders could run into billions of pounds.
+            Between 2007 and 2021, millions of UK consumers took out PCP (Personal Contract Purchase) or HP car finance. Many were charged higher interest rates than necessary because lenders were secretly paying dealers hidden commissions — a practice the regulator found to be widespread and potentially unlawful.
           </p>
           <p class="text-slate-600 leading-relaxed mb-8">
-            If you had car finance during this period, you could be owed significant compensation. Cash Me Up! makes it completely free and straightforward to check your eligibility and start your claim.
+            Independent analysts estimate the total compensation liability for lenders could run into billions of pounds. Cash Me Up makes it completely free and straightforward to check your eligibility and start your claim.
           </p>
+
+          <!-- Quick eligibility checklist -->
+          <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-6 mb-6">
+            <h3 class="font-bold text-[#1B2A4A] mb-4">You may qualify if you...</h3>
+            <ul class="space-y-3">
+              {[
+                'Had PCP or HP car finance between 2007 and 2021',
+                'Finance was arranged through a UK dealership',
+                'Were a UK resident at the time',
+                'Your lender didn\'t disclose how your dealer was paid',
+              ].map((item) => (
+                <li class="flex items-start gap-2.5 text-sm text-slate-700">
+                  <svg class="w-5 h-5 text-[#2D6B2D] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/pcp-claims/" class="btn-primary">Start My Free Check</a>
+            <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">Start My Free Check →</a>
             <a href="/pcp-claims/how-it-works/" class="btn-secondary">How Claims Work</a>
           </div>
         </div>
         <div class="relative">
-          <div class="bg-[#1B2A4A] rounded-2xl p-8 text-white">
-            <h3 class="text-xl font-bold mb-6 text-[#2D6B2D]">Quick Eligibility Check</h3>
-            <ul class="space-y-4">
-              {[
-                'Did you have PCP or HP car finance between 2007 and 2021?',
-                'Was the finance arranged through a UK dealership?',
-                'Did your lender not fully disclose how your dealer was paid?',
-                'Were you a UK resident at the time of the agreement?',
-              ].map((item, i) => (
-                <li class="flex items-start gap-3">
-                  <div class="w-6 h-6 rounded-full bg-[#2D6B2D]/20 border border-[#2D6B2D]/40 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span class="text-[#2D6B2D] text-xs font-bold">{i + 1}</span>
-                  </div>
-                  <span class="text-slate-300 text-sm leading-relaxed">{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div class="mt-6 p-4 bg-[#2D6B2D]/10 rounded-xl border border-[#2D6B2D]/20">
-              <p class="text-sm text-[#2D6B2D] font-semibold">If you answered yes to any of these, you may well be eligible for compensation.</p>
-            </div>
-            <a href="/pcp-claims/eligibility/" class="btn-primary w-full mt-5 text-center block">
-              Check My Full Eligibility →
-            </a>
+          <img
+            src="/images/car-finance.jpg"
+            alt="Car finance - PCP claims"
+            class="w-full rounded-2xl shadow-xl object-cover aspect-video"
+            width="600"
+            height="338"
+            loading="lazy"
+          />
+          <!-- Floating stat card -->
+          <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-4 border border-slate-100">
+            <div class="text-2xl font-black text-[#2D6B2D]">£1,000s</div>
+            <div class="text-xs text-slate-500 mt-0.5">Average claim value</div>
+          </div>
+          <div class="absolute -top-4 -right-4 bg-[#2D6B2D] text-white rounded-2xl shadow-xl p-4">
+            <div class="text-2xl font-black">40M+</div>
+            <div class="text-xs text-white/80 mt-0.5">Affected agreements</div>
           </div>
         </div>
       </div>
@@ -224,10 +261,10 @@ const homepageFAQs = [
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
-            Join Free. Get <span class="text-[#2D6B2D]">Early Access</span> to Everything.
+            Join Free. Get <span class="text-[#7DD87D]">Early Access</span> to Everything.
           </h2>
           <p class="text-slate-300 text-lg leading-relaxed mb-8">
-            Become a Cash Me Up! member — it's completely free and always will be. As a member, you'll get first access to every new money-saving opportunity we launch, personalised alerts based on your profile, and exclusive member-only deals.
+            Become a Cash Me Up member — it's completely free and always will be. As a member, you'll get first access to every new money-saving opportunity we launch, personalised alerts based on your profile, and exclusive member-only deals.
           </p>
           <ul class="space-y-3">
             {[
@@ -258,7 +295,7 @@ const homepageFAQs = [
   <!-- FAQ -->
   <FAQSection
     title="Frequently Asked Questions"
-    subtitle="Everything you need to know about Cash Me Up! and how we can help you."
+    subtitle="Everything you need to know about Cash Me Up and how we can help you."
     faqs={homepageFAQs}
   />
 
@@ -267,7 +304,7 @@ const homepageFAQs = [
     title="Ready to Check If You're Owed Money?"
     subtitle="It takes less than 2 minutes. It's completely free. And you could be owed £1,000s."
     ctaText="Check My PCP Claim Now"
-    ctaHref="/pcp-claims/"
+    ctaHref="https://www.mypcpclaimuk.com/"
     ctaSecondaryText="Learn More"
     ctaSecondaryHref="/pcp-claims/how-it-works/"
   />

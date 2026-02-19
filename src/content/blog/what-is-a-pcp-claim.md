@@ -2,7 +2,7 @@
 title: "What Is a PCP Claim and Why You Might Be Owed Thousands"
 description: "Millions of UK consumers who had car finance between 2007 and 2021 could be entitled to significant compensation. Here's everything you need to know about PCP claims, explained in plain English."
 pubDate: 2025-01-15
-author: "Cash Me Up! Team"
+author: "Cash Me Up Team"
 category: "PCP Claims"
 tags: ["PCP", "car finance", "claims", "compensation", "FCA"]
 featured: true
@@ -27,23 +27,23 @@ The problem isn't with PCP itself. It's with how many PCP agreements were sold.
 
 When you arranged car finance at a dealership, the dealer acted as a "credit broker" — essentially finding a lender on your behalf. The lender paid the dealer a commission for arranging the finance. Again, perfectly normal in financial services.
 
-The problem was how that commission was calculated. Many lenders used what the FCA calls "discretionary commission arrangements" or DCAs. Under a DCA, the dealer had the power to set your interest rate within a range set by the lender. Here's the crucial bit: **the higher the interest rate the dealer set, the bigger the commission they received.**
+The problem was how that commission was calculated. Many lenders used what the regulator calls "discretionary commission arrangements" or DCAs. Under a DCA, the dealer had the power to set your interest rate within a range set by the lender. Here's the crucial bit: **the higher the interest rate the dealer set, the bigger the commission they received.**
 
 Think about what that means. The salesperson helping you choose your finance was financially incentivised to charge you the highest interest rate they could. And in most cases, they never told you this was happening. You sat across the table from someone you trusted to act in your interests, not knowing that they were earning more money for every extra percentage point of interest they added to your loan.
 
-## What Did the FCA Do About It?
+## What Did the regulator Do About It?
 
-The Financial Conduct Authority (FCA) investigated this practice and found it to be widespread across the motor finance industry. Their conclusions were stark: DCAs created a significant conflict of interest, and consumers had been harmed as a result.
+The financial regulator investigated this practice and found it to be widespread across the motor finance industry. Their conclusions were stark: DCAs created a significant conflict of interest, and consumers had been harmed as a result.
 
-In January 2021, the FCA banned discretionary commission arrangements entirely. The ban was a clear acknowledgement that DCAs had been harmful to consumers.
+In January 2021, the regulator banned discretionary commission arrangements entirely. The ban was a clear acknowledgement that DCAs had been harmful to consumers.
 
 But banning the practice going forward left a huge question unanswered: what about all the consumers who had already been overcharged? That's where PCP claims come in.
 
-## The FCA's Motor Finance Review
+## The regulator's Motor Finance Review
 
-In January 2024, the FCA launched a formal review into historic DCAs. The regulator confirmed it had found evidence of potential harm to consumers across the motor finance market and began a process to deliver a fair, consistent outcome for affected customers.
+In January 2024, the regulator launched a formal review into historic DCAs. The regulator confirmed it had found evidence of potential harm to consumers across the motor finance market and began a process to deliver a fair, consistent outcome for affected customers.
 
-The FCA took the unusual step of pausing the standard 8-week complaint response window for lenders — essentially putting a temporary freeze on individual complaints while it worked out the bigger picture.
+The regulator took the unusual step of pausing the standard 8-week complaint response window for lenders — essentially putting a temporary freeze on individual complaints while it worked out the bigger picture.
 
 Then, in October 2024, the Court of Appeal delivered a landmark ruling in three joined cases. The judges found that where a car dealer received a commission from a lender without properly disclosing this to the customer, the arrangement was unlawful. The lenders in those cases were ordered to pay compensation.
 
@@ -72,7 +72,7 @@ You also don't need any paperwork. Our regulated partners can trace your finance
 
 ## How Do I Make a PCP Claim?
 
-The process through Cash Me Up! is straightforward:
+The process through Cash Me Up is straightforward:
 
 1. **Fill in our short form** — takes about 2 minutes. We ask for your basic personal details and some information about your finance history.
 
@@ -80,11 +80,11 @@ The process through Cash Me Up! is straightforward:
 
 3. **They submit your claim** — your partner drafts and submits formal complaints to the relevant lenders on your behalf. You don't need to do anything.
 
-4. **You get paid** — if your claim is successful, the compensation goes directly to you. The claims company takes their agreed success fee. Cash Me Up! charges you nothing at any stage.
+4. **You get paid** — if your claim is successful, the compensation goes directly to you. The claims company takes their agreed success fee. Cash Me Up charges you nothing at any stage.
 
 ## Is There a Time Limit?
 
-Normally, financial complaints must be submitted within 6 years of the event, or 3 years from when you became aware of the issue. The FCA's review has complicated the timeline somewhat, but the general advice is: don't wait. The earlier you submit your claim, the better your position.
+Normally, financial complaints must be submitted within 6 years of the event, or 3 years from when you became aware of the issue. The regulator's review has complicated the timeline somewhat, but the general advice is: don't wait. The earlier you submit your claim, the better your position.
 
 ## The Bottom Line
 

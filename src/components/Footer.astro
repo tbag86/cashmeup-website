@@ -11,13 +11,13 @@ const currentYear = new Date().getFullYear();
       <div class="lg:col-span-1">
         <a href="/" class="inline-flex items-center mb-5 group" aria-label="Cash Me Up - Home">
           <!-- Logo on white pill so it reads cleanly on dark footer -->
-          <div class="bg-white rounded-xl px-4 py-2.5 shadow-lg group-hover:shadow-xl transition-shadow">
+          <div class="bg-white rounded-2xl px-5 py-3 shadow-lg group-hover:shadow-2xl transition-all duration-200 group-hover:scale-105">
             <img
               src="/logo-wide.png"
-              alt="Cash Me Up!"
-              class="h-8 w-auto"
-              width="160"
-              height="40"
+              alt="Cash Me Up"
+              class="h-10 w-auto"
+              width="200"
+              height="50"
               loading="lazy"
               decoding="async"
             />
@@ -27,8 +27,8 @@ const currentYear = new Date().getFullYear();
           We help UK consumers claim money they're owed, access grants, and get cashback — completely free of charge.
         </p>
         <div class="flex items-center gap-2">
-          <span class="badge text-xs">100% Free</span>
-          <span class="badge text-xs">No Win No Fee</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/20">100% Free</span>
+          <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-white border border-white/20">No Win No Fee</span>
         </div>
       </div>
 
@@ -39,7 +39,7 @@ const currentYear = new Date().getFullYear();
           <li><a href="/pcp-claims/" class="text-slate-300 hover:text-[#2D6B2D] text-sm transition-colors">PCP Claims Hub</a></li>
           <li><a href="/pcp-claims/how-it-works/" class="text-slate-300 hover:text-[#2D6B2D] text-sm transition-colors">How It Works</a></li>
           <li><a href="/pcp-claims/eligibility/" class="text-slate-300 hover:text-[#2D6B2D] text-sm transition-colors">Check Eligibility</a></li>
-          <li><a href="/join/" class="text-slate-300 hover:text-[#2D6B2D] text-sm transition-colors">Start My Claim</a></li>
+          <li><a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-[#7DD87D] text-sm transition-colors">Start My Claim</a></li>
         </ul>
       </div>
 
@@ -62,7 +62,7 @@ const currentYear = new Date().getFullYear();
           <li><a href="/terms/" class="text-slate-300 hover:text-[#2D6B2D] text-sm transition-colors">Terms of Service</a></li>
         </ul>
         <div class="text-xs text-slate-400 leading-relaxed">
-          <p>Cash Me Up! is a trading name operating as a claims referral service. We refer claims to regulated claims management companies. We do not provide legal advice.</p>
+          <p>Cash Me Up is a trading name operating as a claims referral service. We refer claims to regulated claims management companies. We do not provide legal advice.</p>
         </div>
       </div>
     </div>
@@ -73,10 +73,10 @@ const currentYear = new Date().getFullYear();
     <div class="container-wide py-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="text-slate-400 text-sm text-center md:text-left">
-          &copy; {currentYear} Cash Me Up! All rights reserved. | cashmeup.co.uk
+          &copy; {currentYear} Cash Me Up. All rights reserved. | cashmeup.co.uk
         </p>
         <p class="text-slate-500 text-xs text-center md:text-right">
-          Claims referred to FCA-authorised partners. No win, no fee. Free to consumers.
+          No win, no fee. Free to consumers. Claims handled by regulated partners.
         </p>
       </div>
     </div>

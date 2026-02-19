@@ -36,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     if (result.success) {
       return new Response(
-        JSON.stringify({ success: true, message: 'Welcome to Cash Me Up!' }),
+        JSON.stringify({ success: true, message: 'Welcome to Cash Me Up' }),
         { status: 201, headers: { 'Content-Type': 'application/json' } }
       );
     } else {
