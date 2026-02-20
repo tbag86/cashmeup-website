@@ -29,7 +29,7 @@ Cash Me Up exists to be the bridge. We do the work of understanding the rules, i
 
 We're launching with a focus on PCP car finance claims because the opportunity is enormous and the window is now.
 
-If you had PCP or HP car finance between 2007 and 2021, you were likely affected by discretionary commission arrangements — a practice the regulator found to be widespread and potentially unlawful. The Court of Appeal ruled in October 2024 that undisclosed dealer commissions were unlawful, and most legal observers expect the Supreme Court to uphold this finding in 2025.
+If you had PCP or HP car finance between 2007 and 2021, you were likely affected by discretionary commission arrangements — a practice the regulator found to be widespread and potentially unlawful. The Court of Appeal ruled in October 2024 that undisclosed dealer commissions were unlawful, and most legal observers expect the Supreme Court to uphold this finding in 2026.
 
 The result could be billions of pounds returned to UK consumers — one of the largest consumer compensation events in UK history.
 
@@ -46,19 +46,19 @@ That's it. No hidden fees. No complex paperwork. No endless phone calls. Just a 
 
 PCP claims are just the beginning. Over the coming months and years, we're building a comprehensive platform for UK consumers to access every legitimate money opportunity available to them.
 
-**Government Grants (Q2 2025)**
+**Government Grants (Q2 2026)**
 
 The UK government runs dozens of grant schemes for homeowners and businesses. Energy efficiency grants. Home improvement funding. Business start-up support. The problem is that most people have no idea these schemes exist, and the application processes are often complex.
 
 We're building a grants matching service that uses your profile to identify every grant you're eligible for and guides you through the application. Completely free.
 
-**Cashback & Discounts (Q3 2025)**
+**Cashback & Discounts (Q3 2026)**
 
 Every time you shop online, there's a good chance you could be earning cashback. Most people aren't. We're building a cashback platform that works with hundreds of UK retailers to make sure our members never miss a penny.
 
 Combined with exclusive member discounts negotiated with top UK brands, this could save our members significant money on their everyday spending.
 
-**Claims Alerts (Q4 2025)**
+**Claims Alerts (Q4 2026)**
 
 New compensation schemes and claim opportunities emerge regularly. Energy mis-selling. Overcharged bank fees. Holiday claim windows. Most people find out about these opportunities too late — after the window has closed.
 

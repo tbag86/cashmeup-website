@@ -43,7 +43,7 @@ For the regulator, the ruling confirmed the direction of the regulatory review a
 
 ## The Supreme Court and What Happens Next
 
-The Supreme Court is expected to hear an appeal from the lenders in 2025. While Supreme Court outcomes are never certain, most legal observers expect the court to uphold the core findings of the Court of Appeal — that undisclosed dealer commissions were unlawful and that consumers are entitled to compensation.
+The Supreme Court is expected to deliver its final ruling in 2026. While Supreme Court outcomes are never certain, most legal observers expect the court to uphold the core findings of the Court of Appeal — that undisclosed dealer commissions were unlawful and that consumers are entitled to compensation.
 
 The regulator is expected to issue its final guidance following the Supreme Court ruling, setting out how lenders must identify affected customers and pay compensation. There may be a formal redress scheme, similar to the PPI compensation scheme that paid out over £38 billion to UK consumers.
 
@@ -72,7 +72,7 @@ Independent analysts now believe the motor finance DCA scandal could rival PPI i
 - **What happened:** Car finance lenders paid dealers secret commissions that incentivised them to charge customers higher interest rates.
 - **When:** Between April 2007 and January 2021, when DCAs were banned by the regulator.
 - **Who's affected:** Anyone who had PCP or HP car finance arranged through a dealership during this period.
-- **Legal position:** The Court of Appeal ruled in October 2024 that this was unlawful. The Supreme Court will hear the case in 2025.
+- **Legal position:** The Court of Appeal ruled in October 2024 that this was unlawful. The Supreme Court is expected to deliver its ruling in 2026.
 - **What to do:** Submit your claim now via Cash Me Up — it's free and takes 2 minutes.
 
 [Start your free PCP claim check →](/pcp-claims/)
