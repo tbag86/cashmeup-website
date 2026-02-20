@@ -1,0 +1,238 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import SignupForm from '../../components/SignupForm.astro';
+
+const cashbackCards = [
+  { retailer: 'Tesco', rate: 'Up to 3%', category: 'Groceries', color: 'bg-blue-50', badge: 'bg-blue-100 text-blue-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>` },
+  { retailer: 'Amazon', rate: 'Up to 4%', category: 'Online Shopping', color: 'bg-orange-50', badge: 'bg-orange-100 text-orange-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>` },
+  { retailer: 'Sainsbury\'s', rate: 'Up to 2.5%', category: 'Groceries', color: 'bg-orange-50', badge: 'bg-orange-100 text-orange-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>` },
+  { retailer: 'ASOS', rate: 'Up to 6%', category: 'Fashion', color: 'bg-pink-50', badge: 'bg-pink-100 text-pink-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>` },
+  { retailer: 'BP / Esso', rate: 'Up to 2%', category: 'Fuel', color: 'bg-yellow-50', badge: 'bg-yellow-100 text-yellow-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>` },
+  { retailer: 'Compare The Market', rate: 'Up to 5%', category: 'Insurance', color: 'bg-green-50', badge: 'bg-green-100 text-green-700', icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>` },
+];
+
+const steps = [
+  { number: '01', title: 'Shop as Normal', description: 'Use Cash Me Up before you shop — either through our app, browser extension, or by clicking through from your member dashboard.' },
+  { number: '02', title: 'We Track Your Purchase', description: 'Our system automatically records your qualifying purchases and calculates your cashback at the agreed rate.' },
+  { number: '03', title: 'Cash Hits Your Account', description: 'Your cashback accumulates in your Cash Me Up wallet and pays out to your bank account — no minimum wait, no hoops.' },
+];
+
+const cashbackFAQs = [
+  {
+    question: 'How does cashback work?',
+    answer: 'When you shop through Cash Me Up (via our app, browser extension, or member dashboard), we earn a commission from the retailer. We then pass most of that commission back to you as cashback. The retailer pays us — not you — so your cashback is pure profit.',
+  },
+  {
+    question: 'When will Cashback launch?',
+    answer: 'We\'re building the cashback platform now. Join free and we\'ll notify you the moment it goes live. Early members will get access to exclusive launch cashback rates.',
+  },
+  {
+    question: 'Will there be a minimum payout amount?',
+    answer: 'We\'re designing the cashback system to pay out with no minimum threshold — meaning every penny you earn can be withdrawn to your bank immediately. Details will be confirmed at launch.',
+  },
+  {
+    question: 'Which retailers will be included?',
+    answer: 'We\'re targeting hundreds of UK retailers across groceries, fuel, insurance, fashion, tech, utilities, and more. Our launch lineup will include major supermarkets, online retailers, and insurance comparison sites.',
+  },
+  {
+    question: 'Is there any cost to use cashback?',
+    answer: 'No. Cash Me Up cashback is completely free to use. There\'s no subscription, no annual fee, and no percentage taken from your cashback. What we show you is what you get.',
+  },
+];
+---
+
+<BaseLayout
+  title="Every Purchase. Working Harder. | Cashback | Cash Me Up"
+  description="Earn cashback on groceries, fuel, insurance, utilities, clothing and tech with Cash Me Up. Coming soon — join free to be first in line."
+  keywords="cashback UK, grocery cashback, fuel cashback, insurance cashback, online shopping cashback, free cashback app UK"
+>
+  <!-- Dark Hero -->
+  <section class="gradient-hero dark-section">
+    <div class="container-wide py-20 md:py-28 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-[#4CAF50] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CAF50] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6">
+          <svg class="w-4 h-4 text-[#7DD87D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span class="text-sm font-semibold text-white">Coming Soon</span>
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          Every Purchase. <span class="text-[#7DD87D]">Working Harder.</span>
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          Stop leaving money on the table. Cash Me Up cashback turns your normal everyday spending into real money back in your pocket — on groceries, fuel, insurance, tech, and hundreds of UK retailers.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/join/" class="btn-primary text-lg px-8 py-4">
+            Join Free — Get Early Access
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+          <a href="/claims/" class="btn-white text-lg px-8 py-4">
+            See What's Live Now
+          </a>
+        </div>
+
+        <!-- Stat row -->
+        <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+          {[
+            { value: '£100s', label: 'Avg. annual cashback' },
+            { value: '500+', label: 'Retailers at launch' },
+            { value: '0%', label: 'Cut taken by us' },
+          ].map((stat) => (
+            <div class="text-center">
+              <div class="text-3xl font-black text-[#7DD87D]">{stat.value}</div>
+              <div class="text-sm mt-1 text-white/70">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Banner -->
+  <section class="bg-amber-50 border-y border-amber-200 py-5">
+    <div class="container-wide">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+          </div>
+          <div>
+            <p class="font-bold text-amber-900 text-sm">Cashback — Coming Soon</p>
+            <p class="text-amber-700 text-xs">Register now for early access and exclusive launch rates when we go live.</p>
+          </div>
+        </div>
+        <a href="/join/" class="flex-shrink-0 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-colors">
+          Register Interest
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Coming -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Cashback on Everything You Already Buy</h2>
+        <p class="text-slate-600 text-lg">No changing how you shop. Just money back on what you're already spending.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { label: 'Groceries', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>` },
+          { label: 'Fuel', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>` },
+          { label: 'Insurance', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>` },
+          { label: 'Utilities', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>` },
+          { label: 'Clothing', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>` },
+          { label: 'Tech', icon: `<svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>` },
+        ].map((cat) => (
+          <div class="flex flex-col items-center gap-3 p-5 rounded-2xl bg-[#F5F7FA] border border-slate-100 text-center">
+            <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center text-[#2D6B2D] shadow-sm">
+              <Fragment set:html={cat.icon} />
+            </div>
+            <span class="font-semibold text-[#1B2A4A] text-sm">{cat.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cashback Cards -->
+  <section class="section-padding bg-[#F5F7FA]">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Example Cashback Rates</h2>
+        <p class="text-slate-600 text-lg">A preview of the rates we're targeting at launch. Actual rates confirmed when we go live.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {cashbackCards.map((card) => (
+          <div class={`rounded-2xl border border-slate-200 p-6 opacity-90 relative ${card.color}`}>
+            <div class="absolute top-4 right-4">
+              <span class="flex items-center gap-1.5 bg-white/80 text-slate-500 text-xs font-bold px-3 py-1 rounded-full">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Coming Soon
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center text-slate-400 mb-4 shadow-sm">
+              <Fragment set:html={card.icon} />
+            </div>
+            <span class={`text-xs font-semibold px-2 py-0.5 rounded inline-block mb-2 ${card.badge}`}>{card.category}</span>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-1 pr-20">{card.retailer}</h3>
+            <p class="text-3xl font-black text-[#2D6B2D]">{card.rate}</p>
+            <p class="text-xs text-slate-500 mt-1">cashback on qualifying purchases</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-slate-400 text-sm mt-6">Rates are indicative. Final cashback rates confirmed at launch. Terms and conditions apply.</p>
+    </div>
+  </section>
+
+  <!-- How It'll Work -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">How Cashback Will Work</h2>
+        <p class="text-slate-600 text-lg">Simple, automatic, and no effort required.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {steps.map((step, i) => (
+          <div class="text-center relative">
+            {i < steps.length - 1 && (
+              <div class="hidden md:block absolute top-10 left-[calc(50%+3rem)] right-0 h-0.5 bg-[#E8F5E8] z-0" aria-hidden="true"></div>
+            )}
+            <div class="relative z-10 w-20 h-20 rounded-full bg-[#2D6B2D] flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-black text-white">{step.number}</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-3">{step.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQSection
+    title="Cashback FAQ"
+    subtitle="Everything you need to know about our upcoming cashback service."
+    faqs={cashbackFAQs}
+  />
+
+  <!-- Join CTA -->
+  <section class="section-padding bg-[#1B2A4A] dark-section">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+            Get Early Access to <span class="text-[#7DD87D]">Cashback</span>
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            Join Cash Me Up free and you'll be one of the first members to access cashback when we launch — with exclusive rates for early members.
+          </p>
+          <div class="flex flex-col gap-3">
+            {[
+              'First in line when cashback goes live',
+              'Exclusive launch cashback rates for early members',
+              'Instant alerts when new retailers are added',
+              'Completely free — no subscription ever',
+            ].map((item) => (
+              <div class="flex items-center gap-3 text-slate-300 text-sm">
+                <svg class="w-5 h-5 text-[#7DD87D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Join Free — Get Cashback Access</h3>
+          <p class="text-slate-500 text-sm mb-6">No payment required. Be first in line.</p>
+          <SignupForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

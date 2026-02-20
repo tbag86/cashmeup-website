@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import SignupForm from '../../components/SignupForm.astro';
+
+const comingClaims = [
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
+    title: 'Energy Mis-Selling',
+    description: 'Were you mis-sold an energy contract with hidden charges or misleading rates? Energy claims are coming to Cash Me Up.',
+    potential: 'Up to £2,000',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>`,
+    title: 'Bank Charges',
+    description: 'Unfair bank charges, mis-sold packaged bank accounts, and overdraft fees — we\'re building the tools to help you claim them back.',
+    potential: 'Up to £1,500',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" /></svg>`,
+    title: 'Holiday Claims',
+    description: 'Package holiday mis-selling, cancelled flights, and travel compensation — get what you\'re owed from airlines and tour operators.',
+    potential: 'Up to £5,000',
+  },
+  {
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" /></svg>`,
+    title: 'Mortgage Mis-Selling',
+    description: 'Mis-sold mortgages, unfair early repayment charges, and payment protection insurance on mortgages.',
+    potential: 'Up to £10,000',
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Check Your Eligibility',
+    description: 'Answer a few quick questions about your situation. Our eligibility checker takes less than 2 minutes and there\'s no obligation.',
+  },
+  {
+    number: '02',
+    title: 'We Handle Everything',
+    description: 'Our regulated partners review your case, gather evidence, and submit your claim. You don\'t need to do a thing.',
+  },
+  {
+    number: '03',
+    title: 'You Get Paid',
+    description: 'If your claim succeeds, compensation goes directly to you. No hidden deductions, no surprise fees — ever.',
+  },
+];
+
+const claimsFAQs = [
+  {
+    question: 'What types of claims does Cash Me Up handle?',
+    answer: 'Currently our live product is PCP and HP car finance claims. We\'re building claim services for energy mis-selling, bank charges, holiday claims, and mortgage mis-selling — join free to be notified when each one launches.',
+  },
+  {
+    question: 'Is there any cost to make a claim through Cash Me Up?',
+    answer: 'No. Cash Me Up is completely free to use. We earn a referral commission from our regulated claims management partners — you never pay anything. If your claim is unsuccessful, nobody is owed anything.',
+  },
+  {
+    question: 'How long do claims take?',
+    answer: 'It depends on the claim type and lender. PCP claims are currently subject to a regulator-led industry review. Our regulated partners will keep you updated throughout the process.',
+  },
+  {
+    question: 'Do I need any documents to start?',
+    answer: 'No. You don\'t need to dig out old paperwork. Our partners have the tools to trace your agreements using your basic details. Simply fill in the form and they handle the rest.',
+  },
+  {
+    question: 'Who handles my claim?',
+    answer: 'All claims are handled by fully regulated, FCA-authorised claims management companies. Cash Me Up acts as an introducer — we connect you with the right experts for your type of claim.',
+  },
+  {
+    question: 'What happens if my claim is unsuccessful?',
+    answer: 'Absolutely nothing. There is no fee, no charge, no obligation. Our "no win, no fee" promise means if you don\'t win, you don\'t pay — and neither do we.',
+  },
+];
+---
+
+<BaseLayout
+  title="Claim What's Rightfully Yours | Claims Hub | Cash Me Up"
+  description="PCP car finance claims live now. Energy mis-selling, bank charges, holiday claims and mortgage mis-selling coming soon. 100% free. No win, no fee."
+  keywords="PCP claims, car finance claims, energy mis-selling claims, bank charges claim, holiday claims UK, mortgage mis-selling, free claims UK"
+>
+  <!-- Dark Hero -->
+  <section class="gradient-hero dark-section">
+    <div class="container-wide py-20 md:py-28 relative">
+      <!-- Decorative blobs -->
+      <div class="absolute top-0 right-0 w-80 h-80 bg-[#4CAF50] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CAF50] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6">
+          <span class="w-2 h-2 rounded-full bg-[#7DD87D] animate-pulse"></span>
+          <span class="text-sm font-semibold text-white">PCP Claims Live Now</span>
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          Claim What's <span class="text-[#7DD87D]">Rightfully Yours</span>
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          From mis-sold car finance to energy contracts, unfair bank charges to holiday disasters — Cash Me Up helps you claim back what you're owed. Completely free. No win, no fee.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4">
+            Check PCP Eligibility Free
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+          <a href="/join/" class="btn-white text-lg px-8 py-4">
+            Join Free for Alerts
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Active Now: PCP -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="badge mb-4 inline-block">Active Now</span>
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Claims Open Right Now</h2>
+        <p class="text-slate-600 text-lg">Start your claim today — our regulated partners are handling applications now.</p>
+      </div>
+
+      <!-- PCP Featured Card -->
+      <div class="max-w-4xl mx-auto">
+        <div class="rounded-2xl border-2 border-[#2D6B2D] bg-white shadow-xl overflow-hidden">
+          <div class="bg-[#2D6B2D] px-6 py-3 flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#7DD87D] animate-pulse"></span>
+            <span class="text-white text-sm font-bold tracking-wide uppercase">Live Now — Taking Applications</span>
+          </div>
+          <div class="p-8 md:p-10">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+              <div class="flex-shrink-0">
+                <div class="w-20 h-20 rounded-2xl bg-[#E8F5E8] flex items-center justify-center">
+                  <svg class="w-10 h-10 text-[#2D6B2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2 2m0 0h10m-10 0H3m10 0h2m4-2V8a1 1 0 00-1-1h-3.93a.5.5 0 01-.447-.276l-1.47-2.947A1 1 0 0014.22 4H13" />
+                  </svg>
+                </div>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl md:text-3xl font-black text-[#1B2A4A] mb-3">PCP Car Finance Claims</h3>
+                <p class="text-slate-600 leading-relaxed mb-6">
+                  Between 2007 and 2021, millions of UK consumers were charged higher interest rates on PCP and HP car finance because lenders secretly paid dealers hidden commissions. The financial regulator found this practice widespread and potentially unlawful. If you had car finance during this period, you could be owed <strong class="text-[#1B2A4A]">£1,000s in compensation</strong>.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                  {[
+                    { value: '£1,000s', label: 'Average claim' },
+                    { value: '40M+', label: 'Agreements affected' },
+                    { value: '100%', label: 'Free to check' },
+                    { value: '2 min', label: 'To apply' },
+                  ].map((stat) => (
+                    <div class="text-center p-3 bg-[#F5F7FA] rounded-xl">
+                      <div class="text-xl font-black text-[#2D6B2D]">{stat.value}</div>
+                      <div class="text-xs text-slate-500 mt-1">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+                <div class="bg-[#F5F7FA] rounded-xl p-5 mb-6">
+                  <h4 class="font-bold text-[#1B2A4A] mb-3 text-sm">You may qualify if you:</h4>
+                  <ul class="space-y-2">
+                    {[
+                      'Had PCP or HP car finance between 2007 and 2021',
+                      'Finance was arranged through a UK dealership',
+                      'Were a UK resident at the time of the agreement',
+                      'Were not told how your dealer was paid by the lender',
+                    ].map((item) => (
+                      <li class="flex items-start gap-2 text-sm text-slate-700">
+                        <svg class="w-4 h-4 text-[#2D6B2D] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                  <a href="https://www.mypcpclaimuk.com/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                    Start My Free PCP Check
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  </a>
+                  <a href="/pcp-claims/" class="btn-secondary">
+                    Full PCP Claims Guide
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Claims -->
+  <section class="section-padding bg-[#F5F7FA]">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="badge mb-4 inline-block">Coming Soon</span>
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">More Claims Coming</h2>
+        <p class="text-slate-600 text-lg">Join free to get priority access as each claim type launches — we'll send you a personal alert.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {comingClaims.map((claim) => (
+          <div class="card-hover opacity-90 group relative overflow-hidden">
+            <!-- Coming soon overlay badge -->
+            <div class="absolute top-4 right-4">
+              <span class="flex items-center gap-1.5 bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-full">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Coming Soon
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+              <Fragment set:html={claim.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-2 pr-24">{claim.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">{claim.description}</p>
+            <div class="flex items-center gap-2 pt-3 border-t border-slate-100">
+              <svg class="w-4 h-4 text-[#2D6B2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="text-sm font-semibold text-[#2D6B2D]">Potential: {claim.potential}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="/join/" class="btn-primary text-base px-8 py-3">
+          Join Free — Get Notified When Each Launches
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">How Claims Work</h2>
+        <p class="text-slate-600 text-lg">Three simple steps. We do the heavy lifting.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {steps.map((step, i) => (
+          <div class="text-center relative">
+            {i < steps.length - 1 && (
+              <div class="hidden md:block absolute top-10 left-[calc(50%+3rem)] right-0 h-0.5 bg-[#E8F5E8] z-0" aria-hidden="true"></div>
+            )}
+            <div class="relative z-10 w-20 h-20 rounded-full bg-[#2D6B2D] flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-black text-white">{step.number}</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-3">{step.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Signals -->
+  <TrustSignals title="Why We're Trusted" variant="alt" />
+
+  <!-- FAQ -->
+  <FAQSection
+    title="Claims FAQ"
+    subtitle="Common questions about how our claims service works."
+    faqs={claimsFAQs}
+  />
+
+  <!-- Join CTA -->
+  <section class="section-padding bg-[#1B2A4A] dark-section">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+            Don't Miss the Next <span class="text-[#7DD87D]">Big Claim</span>
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            New compensation schemes open regularly. Join Cash Me Up free and be the first to know when a claim type that applies to you goes live.
+          </p>
+          <ul class="space-y-3">
+            {[
+              'Instant alert when energy mis-selling claims open',
+              'Priority access to bank charges claim tool',
+              'Holiday claims notifier when it launches',
+              'Personalised eligibility matching',
+            ].map((item) => (
+              <li class="flex items-center gap-3 text-slate-300 text-sm">
+                <svg class="w-5 h-5 text-[#7DD87D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Join Free — Get Claims Alerts</h3>
+          <p class="text-slate-500 text-sm mb-6">No payment. No spam. Unsubscribe any time.</p>
+          <SignupForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

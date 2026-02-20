@@ -1,22 +1,20 @@
 ---
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/pcp-claims/', label: 'PCP Claims' },
-  { href: '/pcp-claims/how-it-works/', label: 'How It Works' },
   { href: '/about/', label: 'About' },
+  { href: '/claims/', label: 'Claims' },
+  { href: '/grants/', label: 'Grants' },
+  { href: '/cashback/', label: 'Cashback' },
+  { href: '/discounts/', label: 'Discounts' },
   { href: '/blog/', label: 'Blog' },
-  { href: '/join/', label: 'Join Free' },
+  { href: '/membership/', label: 'Membership' },
   { href: '/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
 
-// Determine active link — exact match or startsWith, but NOT if a more-specific nav link also matches
 function isActive(linkHref: string): boolean {
   if (linkHref === '/') return currentPath === '/';
-  // Exact match always wins
   if (currentPath === linkHref) return true;
-  // startsWith only if NO other navLink is a more specific match for the current path
   if (currentPath.startsWith(linkHref)) {
     const moreSpecificMatch = navLinks.some(
       (l) => l.href !== linkHref && currentPath.startsWith(l.href) && l.href.length > linkHref.length
@@ -30,7 +28,7 @@ function isActive(linkHref: string): boolean {
 <header class="sticky top-0 z-50 bg-white border-b border-slate-100 transition-shadow duration-300" id="main-header">
   <div class="container-wide">
     <nav class="flex items-center justify-between h-20 md:h-24">
-      
+
       <!-- Logo -->
       <a href="/" class="flex items-center group" aria-label="Cash Me Up - Home">
         <img
@@ -45,12 +43,12 @@ function isActive(linkHref: string): boolean {
       </a>
 
       <!-- Desktop Nav -->
-      <ul class="hidden lg:flex items-center gap-1" role="list">
+      <ul class="hidden xl:flex items-center gap-0.5" role="list">
         {navLinks.map((link) => (
           <li>
             <a
               href={link.href}
-              class={`px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
+              class={`px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-150 ${
                 isActive(link.href)
                   ? 'bg-[#2D6B2D] text-white'
                   : 'text-slate-600 hover:text-[#1B2A4A] hover:bg-slate-50'
@@ -63,8 +61,8 @@ function isActive(linkHref: string): boolean {
         ))}
       </ul>
 
-      <!-- Desktop CTA -->
-      <div class="hidden lg:flex items-center gap-3">
+      <!-- Desktop CTA Buttons -->
+      <div class="hidden xl:flex items-center gap-3">
         <a href="/join/" class="btn-secondary text-sm">
           Join Free
         </a>
@@ -76,7 +74,7 @@ function isActive(linkHref: string): boolean {
       <!-- Mobile hamburger -->
       <button
         id="mobile-menu-btn"
-        class="lg:hidden p-2 rounded-lg text-slate-600 hover:text-[#1B2A4A] hover:bg-slate-50 transition-colors"
+        class="xl:hidden p-2 rounded-lg text-slate-600 hover:text-[#1B2A4A] hover:bg-slate-50 transition-colors"
         aria-label="Open navigation menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -94,7 +92,7 @@ function isActive(linkHref: string): boolean {
   <!-- Mobile menu -->
   <div
     id="mobile-menu"
-    class="hidden lg:hidden border-t border-slate-100 bg-white"
+    class="hidden xl:hidden border-t border-slate-100 bg-white"
     role="navigation"
     aria-label="Mobile navigation"
   >
@@ -130,7 +128,6 @@ function isActive(linkHref: string): boolean {
   const hamburgerIcon = document.getElementById('hamburger-icon');
   const closeIcon = document.getElementById('close-icon');
 
-  // Sticky shadow on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 10) {
       header?.classList.add('nav-scrolled');
@@ -139,7 +136,6 @@ function isActive(linkHref: string): boolean {
     }
   }, { passive: true });
 
-  // Mobile menu toggle
   mobileBtn?.addEventListener('click', () => {
     const isOpen = mobileMenu?.classList.contains('hidden');
     mobileMenu?.classList.toggle('hidden', !isOpen);

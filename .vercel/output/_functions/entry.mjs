@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { c as createExports, s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_ECUrIpba.mjs';
-import { manifest } from './manifest_BPloOqYP.mjs';
+import { manifest } from './manifest_fWvG5g8C.mjs';
 
 const serverIslandMap = new Map();;
 
@@ -12,14 +12,19 @@ const _page4 = () => import('./pages/api/pcp-lead.astro.mjs');
 const _page5 = () => import('./pages/api/signup.astro.mjs');
 const _page6 = () => import('./pages/blog.astro.mjs');
 const _page7 = () => import('./pages/blog/_---slug_.astro.mjs');
-const _page8 = () => import('./pages/contact.astro.mjs');
-const _page9 = () => import('./pages/join.astro.mjs');
-const _page10 = () => import('./pages/pcp-claims/eligibility.astro.mjs');
-const _page11 = () => import('./pages/pcp-claims/how-it-works.astro.mjs');
-const _page12 = () => import('./pages/pcp-claims.astro.mjs');
-const _page13 = () => import('./pages/privacy-policy.astro.mjs');
-const _page14 = () => import('./pages/terms.astro.mjs');
-const _page15 = () => import('./pages/index.astro.mjs');
+const _page8 = () => import('./pages/cashback.astro.mjs');
+const _page9 = () => import('./pages/claims.astro.mjs');
+const _page10 = () => import('./pages/contact.astro.mjs');
+const _page11 = () => import('./pages/discounts.astro.mjs');
+const _page12 = () => import('./pages/grants.astro.mjs');
+const _page13 = () => import('./pages/join.astro.mjs');
+const _page14 = () => import('./pages/membership.astro.mjs');
+const _page15 = () => import('./pages/pcp-claims/eligibility.astro.mjs');
+const _page16 = () => import('./pages/pcp-claims/how-it-works.astro.mjs');
+const _page17 = () => import('./pages/pcp-claims.astro.mjs');
+const _page18 = () => import('./pages/privacy-policy.astro.mjs');
+const _page19 = () => import('./pages/terms.astro.mjs');
+const _page20 = () => import('./pages/index.astro.mjs');
 const pageMap = new Map([
     ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/about.astro", _page1],
@@ -29,14 +34,19 @@ const pageMap = new Map([
     ["src/pages/api/signup.ts", _page5],
     ["src/pages/blog/index.astro", _page6],
     ["src/pages/blog/[...slug].astro", _page7],
-    ["src/pages/contact.astro", _page8],
-    ["src/pages/join.astro", _page9],
-    ["src/pages/pcp-claims/eligibility.astro", _page10],
-    ["src/pages/pcp-claims/how-it-works.astro", _page11],
-    ["src/pages/pcp-claims/index.astro", _page12],
-    ["src/pages/privacy-policy.astro", _page13],
-    ["src/pages/terms.astro", _page14],
-    ["src/pages/index.astro", _page15]
+    ["src/pages/cashback/index.astro", _page8],
+    ["src/pages/claims/index.astro", _page9],
+    ["src/pages/contact.astro", _page10],
+    ["src/pages/discounts/index.astro", _page11],
+    ["src/pages/grants/index.astro", _page12],
+    ["src/pages/join.astro", _page13],
+    ["src/pages/membership/index.astro", _page14],
+    ["src/pages/pcp-claims/eligibility.astro", _page15],
+    ["src/pages/pcp-claims/how-it-works.astro", _page16],
+    ["src/pages/pcp-claims/index.astro", _page17],
+    ["src/pages/privacy-policy.astro", _page18],
+    ["src/pages/terms.astro", _page19],
+    ["src/pages/index.astro", _page20]
 ]);
 
 const _manifest = Object.assign(manifest, {
@@ -47,7 +57,7 @@ const _manifest = Object.assign(manifest, {
     middleware: () => import('./_noop-middleware.mjs')
 });
 const _args = {
-    "middlewareSecret": "bd9fa8af-bffa-4307-91d2-fc3a952c657b",
+    "middlewareSecret": "64a24c25-380f-4ad9-b0b7-684037f6ffaa",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);

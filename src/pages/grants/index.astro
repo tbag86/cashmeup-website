@@ -1,0 +1,269 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQSection from '../../components/FAQSection.astro';
+import SignupForm from '../../components/SignupForm.astro';
+
+const exampleGrants = [
+  {
+    title: 'Boiler Upgrade Scheme',
+    description: 'Replace your old gas boiler with a heat pump and receive a government grant towards the cost.',
+    amount: '£7,500',
+    category: 'Energy & Heating',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.6-7C14 5 15.733 7.1 16 9c.066.52.1 1.04.1 1.56.5-1.274 1.254-2.386 2.2-3.264.18 1.308.098 2.638-.267 3.921A7.916 7.916 0 0120 12a8 8 0 01-2.343 5.657z" /></svg>`,
+  },
+  {
+    title: 'Home Insulation Grant',
+    description: 'Free loft, wall and underfloor insulation for eligible homeowners and tenants to reduce energy bills.',
+    amount: 'Up to £10,000',
+    category: 'Home Improvement',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`,
+  },
+  {
+    title: 'New Enterprise Allowance',
+    description: 'Start-up funding and mentoring for unemployed people looking to start their own business.',
+    amount: 'Up to £1,274',
+    category: 'Business',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+  },
+  {
+    title: 'Disabled Facilities Grant',
+    description: 'Mandatory grant to help pay for adaptations to your home if you have a disability.',
+    amount: 'Up to £30,000',
+    category: 'Disability',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`,
+  },
+  {
+    title: 'Household Support Fund',
+    description: 'Local council funding to help households struggling with the cost of essentials like food and energy.',
+    amount: 'Up to £500',
+    category: 'Cost of Living',
+    icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Tell Us About Yourself',
+    description: 'Answer a few questions about your situation — home ownership, income, location, and what you\'re looking to improve.',
+  },
+  {
+    number: '02',
+    title: 'We Match You to Grants',
+    description: 'Our system searches hundreds of UK government and local authority grant schemes and shows you every grant you qualify for.',
+  },
+  {
+    number: '03',
+    title: 'Apply With Our Help',
+    description: 'We guide you through the application for each grant — or handle it on your behalf. You just collect the money.',
+  },
+];
+
+const grantsFAQs = [
+  {
+    question: 'What types of grants will Cash Me Up help me find?',
+    answer: 'We\'re building a comprehensive matching system covering UK government grants for home improvements (insulation, heating, solar), energy efficiency, boiler replacement, business start-up, disability adaptations, cost-of-living support, and more. Join free to be notified at launch.',
+  },
+  {
+    question: 'Are the grants really free money?',
+    answer: 'Yes. Government grants are funds you don\'t have to pay back. They\'re designed to help specific groups of people with specific needs — the challenge is knowing they exist and qualifying for them. That\'s exactly what Cash Me Up will solve.',
+  },
+  {
+    question: 'How will Cash Me Up match me to grants?',
+    answer: 'When you join, you\'ll complete a profile including your home ownership status, income, location, employment, and any disabilities or health conditions. Our system then cross-references this against every available grant scheme and shows you the ones you\'re eligible for.',
+  },
+  {
+    question: 'Is Cash Me Up\'s grant matching free?',
+    answer: 'Yes, completely free. Cash Me Up is always free for consumers. We earn referral fees from service providers and applicants, never from grant applicants.',
+  },
+  {
+    question: 'When will Grants launch?',
+    answer: 'We\'re actively building the grants matching system. Join free and we\'ll send you a personal notification the day it goes live — so you can be first in line.',
+  },
+];
+---
+
+<BaseLayout
+  title="Unlock Grants You're Entitled To | Grants | Cash Me Up"
+  description="UK government grants for home improvements, energy efficiency, boilers, business start-up, disability adaptations and more. Cash Me Up matches you to grants you qualify for — free."
+  keywords="UK grants, government grants UK, home improvement grants, boiler replacement grant, energy efficiency grant, business grants UK, disabled grants UK"
+>
+  <!-- Dark Hero -->
+  <section class="gradient-hero dark-section">
+    <div class="container-wide py-20 md:py-28 relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-[#4CAF50] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CAF50] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-3xl">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6">
+          <svg class="w-4 h-4 text-[#7DD87D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          <span class="text-sm font-semibold text-white">Coming Soon</span>
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+          Unlock Grants <span class="text-[#7DD87D]">You're Entitled To</span>
+        </h1>
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+          Billions of pounds in UK government grants go unclaimed every year — because most people simply don't know they're eligible. Cash Me Up is building the UK's smartest grant matching tool. Join free to be first in line.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/join/" class="btn-primary text-lg px-8 py-4">
+            Join Free — Get First Access
+            <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+          </a>
+          <a href="/claims/" class="btn-white text-lg px-8 py-4">
+            See What's Live Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon Banner -->
+  <section class="bg-amber-50 border-y border-amber-200 py-5">
+    <div class="container-wide">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" /></svg>
+          </div>
+          <div>
+            <p class="font-bold text-amber-900 text-sm">Grant Matching — Coming Soon</p>
+            <p class="text-amber-700 text-xs">We're building something brilliant. Register now and be first to access it.</p>
+          </div>
+        </div>
+        <a href="/join/" class="flex-shrink-0 bg-amber-500 hover:bg-amber-600 text-white font-bold text-sm px-5 py-2.5 rounded-lg transition-colors">
+          Register Interest
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Coming -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">What's Coming</h2>
+        <p class="text-slate-600 text-lg">Our grant matching tool will cover every major UK funding scheme — automatically matched to your profile.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>`, title: 'Home Improvement', desc: 'Insulation, double glazing, roofing, and structural improvements funded by government schemes.' },
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`, title: 'Energy Efficiency', desc: 'Solar panels, heat pumps, smart meters, and energy-saving measures — with full grant support.' },
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.6-7C14 5 15.733 7.1 16 9c.066.52.1 1.04.1 1.56.5-1.274 1.254-2.386 2.2-3.264.18 1.308.098 2.638-.267 3.921A7.916 7.916 0 0120 12a8 8 0 01-2.343 5.657z" /></svg>`, title: 'Boiler Replacement', desc: 'Free or subsidised replacement of old, inefficient boilers through ECO4 and the Boiler Upgrade Scheme.' },
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`, title: 'Business Start-Up', desc: 'Start-up funding, mentoring, and grants for new businesses — from sole traders to tech start-ups.' },
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`, title: 'Disability Adaptations', desc: 'Mandatory grants and funded adaptations to make your home accessible — for you or a family member.' },
+          { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`, title: 'Cost of Living Support', desc: 'Local council hardship funds, household support grants, and emergency financial assistance.' },
+        ].map((item) => (
+          <div class="card flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-[#E8F5E8] flex items-center justify-center text-[#2D6B2D]">
+              <Fragment set:html={item.icon} />
+            </div>
+            <h3 class="font-bold text-[#1B2A4A]">{item.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Example Grant Cards -->
+  <section class="section-padding bg-[#F5F7FA]">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Example Grants We'll Match You To</h2>
+        <p class="text-slate-600 text-lg">A snapshot of the real UK grants our matching tool will find for you — worth hundreds to thousands of pounds.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {exampleGrants.map((grant) => (
+          <div class="card-hover opacity-90 relative group">
+            <div class="absolute top-4 right-4">
+              <span class="flex items-center gap-1.5 bg-slate-100 text-slate-500 text-xs font-bold px-3 py-1 rounded-full">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                Coming Soon
+              </span>
+            </div>
+            <div class="w-12 h-12 rounded-xl bg-slate-100 flex items-center justify-center text-slate-400 mb-4">
+              <Fragment set:html={grant.icon} />
+            </div>
+            <span class="text-xs font-semibold text-[#2D6B2D] bg-[#E8F5E8] px-2 py-0.5 rounded mb-3 inline-block">{grant.category}</span>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-2 pr-24">{grant.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">{grant.description}</p>
+            <div class="pt-3 border-t border-slate-100 flex items-center gap-2">
+              <svg class="w-4 h-4 text-[#2D6B2D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span class="text-base font-black text-[#2D6B2D]">{grant.amount}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-slate-400 text-sm mt-6">Example grants shown for illustrative purposes. Eligibility varies. Full matching tool launching soon.</p>
+    </div>
+  </section>
+
+  <!-- How It'll Work -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">How Grant Matching Will Work</h2>
+        <p class="text-slate-600 text-lg">Fast, personalised, and completely free.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        {steps.map((step, i) => (
+          <div class="text-center relative">
+            {i < steps.length - 1 && (
+              <div class="hidden md:block absolute top-10 left-[calc(50%+3rem)] right-0 h-0.5 bg-[#E8F5E8] z-0" aria-hidden="true"></div>
+            )}
+            <div class="relative z-10 w-20 h-20 rounded-full bg-[#2D6B2D] flex items-center justify-center mx-auto mb-6">
+              <span class="text-2xl font-black text-white">{step.number}</span>
+            </div>
+            <h3 class="text-lg font-bold text-[#1B2A4A] mb-3">{step.title}</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQSection
+    title="Grants FAQ"
+    subtitle="Common questions about our upcoming grant matching service."
+    faqs={grantsFAQs}
+  />
+
+  <!-- Join CTA -->
+  <section class="section-padding bg-[#1B2A4A] dark-section">
+    <div class="container-wide">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
+            Be First in Line <span class="text-[#7DD87D]">When We Launch</span>
+          </h2>
+          <p class="text-slate-300 text-lg leading-relaxed mb-6">
+            Grant matching is coming soon. Join Cash Me Up free today and we'll notify you the moment it goes live — so you can be the first to find every grant you're entitled to.
+          </p>
+          <div class="flex flex-col gap-3">
+            {[
+              'Personal grant matching based on your profile',
+              'Automatic alerts for new government schemes',
+              'Step-by-step application guidance',
+              'Completely free — always',
+            ].map((item) => (
+              <div class="flex items-center gap-3 text-slate-300 text-sm">
+                <svg class="w-5 h-5 text-[#7DD87D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Join Free — Grants Launch Alert</h3>
+          <p class="text-slate-500 text-sm mb-6">Be the first to access grant matching when it launches.</p>
+          <SignupForm />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
