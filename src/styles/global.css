@@ -147,6 +147,28 @@
     background: linear-gradient(135deg, #0F1D35 0%, #1B2A4A 40%, #152340 100%);
   }
 
+  /* Override global h1-h6 dark colour inside dark/coloured sections — headings MUST be white */
+  .gradient-hero h1,
+  .gradient-hero h2,
+  .gradient-hero h3,
+  .gradient-hero h4,
+  .gradient-hero h5,
+  .gradient-hero h6,
+  .bg-\[#1B2A4A\] h1,
+  .bg-\[#1B2A4A\] h2,
+  .bg-\[#1B2A4A\] h3,
+  .bg-\[#1B2A4A\] h4,
+  .bg-\[#1B2A4A\] h5,
+  .bg-\[#1B2A4A\] h6,
+  .bg-\[#2D6B2D\] h1,
+  .bg-\[#2D6B2D\] h2,
+  .bg-\[#2D6B2D\] h3,
+  .bg-\[#2D6B2D\] h4,
+  .bg-\[#2D6B2D\] h5,
+  .bg-\[#2D6B2D\] h6 {
+    color: #ffffff;
+  }
+
   .section-alt {
     background-color: #F5F7FA;
   }
