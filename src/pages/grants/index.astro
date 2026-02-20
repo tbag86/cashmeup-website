@@ -89,7 +89,7 @@ const grantsFAQs = [
   keywords="UK grants, government grants UK, home improvement grants, boiler replacement grant, energy efficiency grant, business grants UK, disabled grants UK"
 >
   <!-- Dark Hero -->
-  <section class="gradient-hero dark-section">
+  <section class="gradient-hero dark-section hero-animate">
     <div class="container-wide py-20 md:py-28 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-96 h-96 bg-[#4CAF50] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CAF50] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
@@ -99,10 +99,10 @@ const grantsFAQs = [
           <svg class="w-4 h-4 text-[#7DD87D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-sm font-semibold text-white">Coming Soon</span>
         </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 animate-fade-in">
           Unlock Grants <span class="text-[#7DD87D]">You're Entitled To</span>
         </h1>
-        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-delay-1">
           Billions of pounds in UK government grants go unclaimed every year — because most people simply don't know they're eligible. Cash Me Up is building the UK's smartest grant matching tool. Join free to be first in line.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
@@ -141,7 +141,7 @@ const grantsFAQs = [
   <!-- What's Coming -->
   <section class="section-padding bg-white">
     <div class="container-wide">
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">What's Coming</h2>
         <p class="text-slate-600 text-lg">Our grant matching tool will cover every major UK funding scheme — automatically matched to your profile.</p>
       </div>
@@ -154,7 +154,7 @@ const grantsFAQs = [
           { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`, title: 'Business Start-Up', desc: 'Start-up funding, mentoring, and grants for new businesses — from sole traders to tech start-ups.' },
           { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>`, title: 'Disability Adaptations', desc: 'Mandatory grants and funded adaptations to make your home accessible — for you or a family member.' },
           { icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`, title: 'Cost of Living Support', desc: 'Local council hardship funds, household support grants, and emergency financial assistance.' },
-        ].map((item) => (
+        ].map((item, i) => (
           <div class="card flex flex-col gap-3">
             <div class="w-12 h-12 rounded-xl bg-[#E8F5E8] flex items-center justify-center text-[#2D6B2D]">
               <Fragment set:html={item.icon} />
@@ -250,7 +250,7 @@ const grantsFAQs = [
               'Automatic alerts for new government schemes',
               'Step-by-step application guidance',
               'Completely free — always',
-            ].map((item) => (
+            ].map((item, i) => (
               <div class="flex items-center gap-3 text-slate-300 text-sm">
                 <svg class="w-5 h-5 text-[#7DD87D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                 {item}

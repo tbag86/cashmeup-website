@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 ---
 
-<section class={`relative overflow-hidden ${dark ? 'gradient-hero text-white' : 'bg-white'}`}>
+<section class={`relative overflow-hidden hero-animate ${dark ? 'gradient-hero text-white' : 'bg-white'}`}>
   <!-- Background: large watermark running figure (brand mascot, subtle) -->
   {dark && (
     <div class="absolute inset-y-0 right-0 w-1/2 flex items-center justify-end pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -67,22 +67,22 @@ const {
     <div class={`${centred ? 'text-center max-w-4xl mx-auto' : 'max-w-3xl'}`}>
       
       {badge && (
-        <div class={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 ${dark ? 'bg-white/15 border border-white/25' : 'bg-[#2D6B2D]/10 border border-[#2D6B2D]/20'}`}>
+        <div class={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 animate-fade-in ${dark ? 'bg-white/15 border border-white/25' : 'bg-[#2D6B2D]/10 border border-[#2D6B2D]/20'}`}>
           <span class={`w-2 h-2 rounded-full animate-pulse ${dark ? 'bg-white' : 'bg-[#2D6B2D]'}`}></span>
           <span class={`text-sm font-semibold ${dark ? 'text-white' : 'text-[#1E5A1E]'}`}>{badge}</span>
         </div>
       )}
 
-      <h1 class={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 ${dark ? 'text-white' : 'text-[#1B2A4A]'}`}>
+      <h1 class={`text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 animate-fade-in ${dark ? 'text-white' : 'text-[#1B2A4A]'}`}>
         {title}
         {titleAccent && <span class={dark ? 'text-[#7DD87D]' : 'text-[#2D6B2D]'}> {titleAccent}</span>}
       </h1>
 
-      <p class={`text-lg md:text-xl leading-relaxed mb-8 ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+      <p class={`text-lg md:text-xl leading-relaxed mb-8 animate-fade-in-delay-1 ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
         {subtitle}
       </p>
 
-      <div class={`flex flex-col sm:flex-row gap-4 ${centred ? 'justify-center' : ''}`}>
+      <div class={`flex flex-col sm:flex-row gap-4 animate-fade-in-delay-2 ${centred ? 'justify-center' : ''}`}>
         <a href={ctaPrimaryHref} class="btn-primary text-base px-8 py-4 text-lg">
           {ctaPrimaryText}
           <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -97,7 +97,7 @@ const {
       </div>
 
       {stats && stats.length > 0 && (
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-white/10 animate-fade-in-delay-3">
           {stats.map((stat) => (
             <div class="text-center">
               <div class={`text-3xl font-black ${dark ? 'text-[#7DD87D]' : 'text-[#2D6B2D]'}`}>{stat.value}</div>

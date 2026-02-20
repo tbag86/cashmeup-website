@@ -33,5 +33,28 @@ const props = Astro.props;
       <slot />
     </main>
     <Footer />
+
+    <!-- Intersection Observer: adds .revealed to .reveal elements as they enter the viewport -->
+    <script>
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') return;
+
+        const observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        );
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+    </script>
   </body>
 </html>

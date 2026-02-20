@@ -19,10 +19,10 @@ const posts = (await getCollection('blog')).sort(
 >
   <Breadcrumbs items={breadcrumbs} />
 
-  <section class="gradient-hero text-white py-16">
+  <section class="gradient-hero text-white py-16 hero-animate">
     <div class="container-wide text-center">
-      <h1 class="text-4xl md:text-5xl font-black mb-4">Blog & News</h1>
-      <p class="text-slate-300 text-lg max-w-2xl mx-auto">The latest on PCP claims, the regulator updates, grants, and money-saving opportunities for UK consumers.</p>
+      <h1 class="text-4xl md:text-5xl font-black mb-4 animate-fade-in">Blog & News</h1>
+      <p class="text-slate-300 text-lg max-w-2xl mx-auto animate-fade-in-delay-1">The latest on PCP claims, the regulator updates, grants, and money-saving opportunities for UK consumers.</p>
     </div>
   </section>
 
@@ -32,8 +32,8 @@ const posts = (await getCollection('blog')).sort(
         <p class="text-slate-500 text-center py-12">No posts yet — check back soon.</p>
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
-            <BlogPostCard
+          {posts.map((post, i) => (
+            <div class={`reveal reveal-delay-${Math.min(i + 1, 5)}`}><BlogPostCard
               title={post.data.title}
               description={post.data.description}
               slug={post.slug}
@@ -41,6 +41,7 @@ const posts = (await getCollection('blog')).sort(
               category={post.data.category}
               readTime={post.data.readTime}
             />
+            </div>
           ))}
         </div>
       )}

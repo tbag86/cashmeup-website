@@ -48,7 +48,7 @@ const cashbackFAQs = [
   keywords="cashback UK, grocery cashback, fuel cashback, insurance cashback, online shopping cashback, free cashback app UK"
 >
   <!-- Dark Hero -->
-  <section class="gradient-hero dark-section">
+  <section class="gradient-hero dark-section hero-animate">
     <div class="container-wide py-20 md:py-28 relative overflow-hidden">
       <div class="absolute top-0 right-0 w-96 h-96 bg-[#4CAF50] rounded-full opacity-10 -translate-y-1/3 translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
       <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CAF50] rounded-full opacity-[0.07] translate-y-1/3 -translate-x-1/3 pointer-events-none" aria-hidden="true"></div>
@@ -58,10 +58,10 @@ const cashbackFAQs = [
           <svg class="w-4 h-4 text-[#7DD87D]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
           <span class="text-sm font-semibold text-white">Coming Soon</span>
         </span>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 animate-fade-in">
           Every Purchase. <span class="text-[#7DD87D]">Working Harder.</span>
         </h1>
-        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
+        <p class="text-slate-300 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl animate-fade-in-delay-1">
           Stop leaving money on the table. Cash Me Up cashback turns your normal everyday spending into real money back in your pocket — on groceries, fuel, insurance, tech, and hundreds of UK retailers.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
@@ -114,7 +114,7 @@ const cashbackFAQs = [
   <!-- What's Coming -->
   <section class="section-padding bg-white">
     <div class="container-wide">
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Cashback on Everything You Already Buy</h2>
         <p class="text-slate-600 text-lg">No changing how you shop. Just money back on what you're already spending.</p>
       </div>
@@ -219,7 +219,7 @@ const cashbackFAQs = [
               'Exclusive launch cashback rates for early members',
               'Instant alerts when new retailers are added',
               'Completely free — no subscription ever',
-            ].map((item) => (
+            ].map((item, i) => (
               <div class="flex items-center gap-3 text-slate-300 text-sm">
                 <svg class="w-5 h-5 text-[#7DD87D] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
                 {item}

@@ -112,7 +112,7 @@ const pcpFAQs = [
             { label: 'Period Covered', value: 'April 2007 – January 2021', icon: '📅' },
             { label: 'Finance Types', value: 'PCP & HP Agreements', icon: '🚗' },
             { label: 'The Issue', value: 'Hidden dealer commissions', icon: '💰' },
-          ].map((item) => (
+          ].map((item, i) => (
             <div class="bg-[#F5F7FA] rounded-xl p-5 text-center">
               <div class="text-3xl mb-2">{item.icon}</div>
               <div class="text-sm text-slate-500 mb-1">{item.label}</div>
@@ -142,7 +142,7 @@ const pcpFAQs = [
                 'You don\'t have the car any more (that\'s fine)',
                 'The finance agreement has ended (still eligible)',
                 'You\'re unsure of the exact dates (we can find out)',
-              ].map((item) => (
+              ].map((item, i) => (
                 <li class="flex items-start gap-2.5 text-sm text-slate-600">
                   <svg class="w-5 h-5 text-[#2D6B2D] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
@@ -160,7 +160,7 @@ const pcpFAQs = [
                 'You arranged finance directly with a bank (not through a dealer)',
                 'You had a personal loan (not car finance)',
                 'Your agreement was a straightforward fixed-rate loan with no DCA',
-              ].map((item) => (
+              ].map((item, i) => (
                 <li class="flex items-start gap-2.5 text-sm text-slate-600">
                   <svg class="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />

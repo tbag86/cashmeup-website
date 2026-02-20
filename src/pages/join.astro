@@ -39,7 +39,7 @@ const joinFAQs = [
 
   <section class="gradient-hero text-white section-padding">
     <div class="container-wide text-center">
-      <h1 class="text-4xl md:text-5xl font-black mb-6">Join Free — Never Miss a Money Opportunity</h1>
+      <h1 class="text-4xl md:text-5xl font-black mb-6 animate-fade-in">Join Free — Never Miss a Money Opportunity</h1>
       <p class="text-slate-300 text-xl max-w-3xl mx-auto">Become a Cash Me Up member in under 30 seconds. Free forever. First access to every claim, grant, cashback, and exclusive deal we launch.</p>
     </div>
   </section>
@@ -57,7 +57,7 @@ const joinFAQs = [
               { title: 'Cashback & Discounts — Coming Q3 2025', description: 'Earn cashback on everyday shopping and access exclusive member-only discounts across hundreds of UK retailers.', status: 'soon' },
               { title: 'Claims Alerts — Coming Q4 2025', description: 'Be first to know about new compensation schemes — energy mis-selling, bank charges, holiday claims, and more.', status: 'soon' },
               { title: 'Exclusive Member Deals — Ongoing', description: 'Partner deals and discounts available exclusively to Cash Me Up members, with new offers added regularly.', status: 'partial' },
-            ].map((item) => (
+            ].map((item, i) => (
               <div class="flex gap-4 p-4 rounded-xl bg-[#F5F7FA] border border-slate-100">
                 <div class={`w-2.5 h-2.5 rounded-full mt-2 flex-shrink-0 ${item.status === 'live' ? 'bg-[#2D6B2D]' : item.status === 'partial' ? 'bg-amber-400' : 'bg-slate-300'}`}></div>
                 <div>

@@ -106,6 +106,8 @@ const homepageFAQs = [
     answer: 'Free membership gives you access to all current and future Cash Me Up products: claims checking, grant matching, cashback, discounts, and priority alerts when new compensation schemes open. It\'s one free account that unlocks everything we build.',
   },
 ];
+
+const staggerDelays = ['', 'reveal-delay-1', 'reveal-delay-2', 'reveal-delay-3', 'reveal-delay-4'];
 ---
 
 <BaseLayout
@@ -130,7 +132,7 @@ const homepageFAQs = [
   <!-- What is Cash Me Up -->
   <section class="section-padding bg-white">
     <div class="container-wide">
-      <div class="text-center max-w-3xl mx-auto mb-14">
+      <div class="text-center max-w-3xl mx-auto mb-14 reveal">
         <span class="badge mb-4 inline-block">What We Do</span>
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">One Platform. Five Ways to Get Money Back.</h2>
         <p class="text-slate-600 text-lg leading-relaxed">
@@ -146,9 +148,9 @@ const homepageFAQs = [
           { icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>`, label: 'Cashback', href: '/cashback/' },
           { icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" /></svg>`, label: 'Discounts', href: '/discounts/' },
           { icon: `<svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>`, label: 'Membership', href: '/membership/' },
-        ].map((item) => (
-          <a href={item.href} class="group flex flex-col items-center gap-3 p-6 rounded-2xl border border-slate-100 hover:border-[#2D6B2D]/30 hover:shadow-md transition-all text-center bg-white">
-            <div class="w-16 h-16 rounded-2xl bg-[#E8F5E8] flex items-center justify-center text-[#2D6B2D] group-hover:bg-[#2D6B2D] group-hover:text-white transition-colors">
+        ].map((item, i) => (
+          <a href={item.href} class={`group flex flex-col items-center gap-3 p-6 rounded-2xl border border-slate-100 hover:border-[#2D6B2D]/30 hover:shadow-md transition-all text-center bg-white reveal ${staggerDelays[i] || ''}`}>
+            <div class="w-16 h-16 rounded-2xl bg-[#E8F5E8] flex items-center justify-center text-[#2D6B2D] group-hover:bg-[#2D6B2D] group-hover:text-white transition-colors animate-float">
               <Fragment set:html={item.icon} />
             </div>
             <span class="font-bold text-[#1B2A4A] text-sm">{item.label}</span>
@@ -161,16 +163,16 @@ const homepageFAQs = [
   <!-- Our Products Grid -->
   <section class="section-padding bg-[#F5F7FA]">
     <div class="container-wide">
-      <div class="text-center max-w-2xl mx-auto mb-12">
+      <div class="text-center max-w-2xl mx-auto mb-12 reveal">
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">Our Products</h2>
         <p class="text-slate-600 text-lg">Start with what's live now and register your interest for everything that's coming.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
+        {products.map((product, i) => (
           <a
             href={product.href}
-            class={`card-hover flex flex-col gap-4 group ${!product.live ? 'opacity-90' : ''}`}
+            class={`card-hover flex flex-col gap-4 group reveal ${staggerDelays[i] || ''} ${!product.live ? 'opacity-90' : ''}`}
           >
             <div class="flex items-start justify-between">
               <div class={`w-14 h-14 rounded-xl flex items-center justify-center text-[#2D6B2D] ${product.live ? 'bg-[#E8F5E8]' : 'bg-slate-100'} group-hover:bg-[#2D6B2D] group-hover:text-white transition-colors`}>
@@ -197,7 +199,7 @@ const homepageFAQs = [
   <!-- Claims CTA Strip -->
   <section class="gradient-hero dark-section py-16 md:py-20">
     <div class="container-wide">
-      <div class="max-w-4xl mx-auto text-center">
+      <div class="max-w-4xl mx-auto text-center reveal">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 border border-white/25 mb-6">
           <span class="w-2 h-2 rounded-full bg-[#7DD87D] animate-pulse"></span>
           <span class="text-sm font-semibold text-white">Live Now</span>
@@ -229,7 +231,7 @@ const homepageFAQs = [
   <section class="section-padding bg-[#1B2A4A] dark-section">
     <div class="container-wide">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
+        <div class="reveal">
           <span class="inline-flex items-center px-3 py-1 rounded-full bg-white/15 border border-white/20 text-white text-sm font-semibold mb-6">Free Membership</span>
           <h2 class="text-3xl md:text-4xl font-black text-white mb-6">
             One free account.<br /><span class="text-[#7DD87D]">Maximum value.</span>
@@ -255,7 +257,7 @@ const homepageFAQs = [
             ))}
           </ul>
         </div>
-        <div class="bg-white rounded-2xl p-8 shadow-2xl">
+        <div class="bg-white rounded-2xl p-8 shadow-2xl reveal reveal-delay-2">
           <h3 class="text-xl font-bold text-[#1B2A4A] mb-2">Create Your Free Account</h3>
           <p class="text-slate-500 text-sm mb-6">No payment required. No spam. Unsubscribe any time.</p>
           <SignupForm />

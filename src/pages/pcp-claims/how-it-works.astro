@@ -50,7 +50,7 @@ const timelineFAQs = [
   description="Understand exactly how PCP car finance claims work in the UK. From the regulator investigation to receiving compensation — the full process explained clearly. Free to start."
   keywords="how PCP claims work, PCP claim process, the regulator motor finance review, PCP compensation process, car finance complaint"
 >
-  <section class="gradient-hero text-white">
+  <section class="gradient-hero text-white hero-animate">
     <Breadcrumbs items={breadcrumbs} variant="dark" />
     <!-- Hero -->
     <div class="container-wide py-16 md:py-20 text-center">
@@ -79,7 +79,7 @@ const timelineFAQs = [
   <!-- Timeline/Steps -->
   <section class="section-padding section-alt">
     <div class="container-wide">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 reveal">
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">The Claims Process — Step by Step</h2>
         <p class="text-slate-600 text-lg max-w-2xl mx-auto">From submitting your details to receiving your compensation, here's exactly what happens.</p>
       </div>
@@ -135,7 +135,7 @@ const timelineFAQs = [
             description: 'The compensation is paid directly to you by the lender. Your claims management partner receives their success fee (a percentage of the compensation, agreed upfront). You keep the rest. Through Cash Me Up, you\'re never charged anything — the partner\'s fee comes from the compensation.',
             colour: 'bg-[#2D6B2D]',
           },
-        ].map((item) => (
+        ].map((item, i) => (
           <div class="flex gap-6 bg-white rounded-xl p-6 shadow-sm border border-slate-100">
             <div class={`flex-shrink-0 w-12 h-12 ${item.colour} rounded-xl flex items-center justify-center`}>
               <span class="text-white font-black text-sm">{item.step}</span>

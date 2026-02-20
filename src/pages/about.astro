@@ -39,14 +39,14 @@ const aboutFAQs = [
   description="Learn about Cash Me Up — our mission, how we work, our business model, and our vision for the UK's most comprehensive free money platform. Transparent, consumer-first, always free."
   keywords="about Cash Me Up, who is Cash Me Up, Cash Me Up mission, free claims service UK"
 >
-  <section class="gradient-hero text-white">
+  <section class="gradient-hero text-white hero-animate">
     <Breadcrumbs items={breadcrumbs} variant="dark" />
     <div class="container-wide pt-10 pb-14 md:pt-12 md:pb-16">
       <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-black mb-6">
+        <h1 class="text-4xl md:text-5xl font-black mb-6 animate-fade-in">
           We're on a Mission to Put <span class="text-[#7DD87D]">Your Money</span> Back in Your Pocket
         </h1>
-        <p class="text-white/80 text-xl leading-relaxed">
+        <p class="text-white/80 text-xl leading-relaxed animate-fade-in-delay-1">
           Cash Me Up was built on a simple belief: UK consumers deserve to know about the money they're owed — and they deserve help getting it, without being charged for the privilege.
         </p>
       </div>
@@ -55,8 +55,8 @@ const aboutFAQs = [
 
   <section class="section-padding bg-white">
     <div class="container-wide max-w-4xl mx-auto">
-      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">Our Story</h2>
-      <div class="space-y-5 text-slate-600 leading-relaxed">
+      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6 reveal">Our Story</h2>
+      <div class="space-y-5 text-slate-600 leading-relaxed reveal reveal-delay-1">
         <p class="text-lg">Cash Me Up was founded with a clear-eyed view of a problem that affects millions of people in the UK: there's a huge amount of money sitting unclaimed, owed to ordinary consumers — but the process of getting it back is confusing, time-consuming, and often feels out of reach.</p>
         <p>Consider PCP car finance alone. Independent analysts estimate that lenders may owe over £30 billion in compensation to UK consumers who were mis-sold their car finance agreements. That's billions of pounds sitting in the hands of banks and finance companies that should be in the pockets of everyday people who overpaid on their monthly car finance.</p>
         <p>Then there are the grants — millions of pounds of government funding that UK homeowners and businesses are entitled to claim, but don't, simply because they don't know the schemes exist or find the application process too complex. There are the cashback schemes, the compensation funds for energy mis-selling, the refunds for overcharged bank customers.</p>
@@ -68,7 +68,7 @@ const aboutFAQs = [
 
   <section class="section-padding section-alt">
     <div class="container-wide">
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 reveal">
         <h2 class="text-3xl md:text-4xl font-black text-[#1B2A4A] mb-4">What We Stand For</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -88,8 +88,8 @@ const aboutFAQs = [
             description: 'Our service to consumers is permanently free. We will never introduce a subscription, a processing fee, or any other charge to consumers. If we can\'t make our business model work while remaining free to consumers, we\'ll change our business model — not our promise to you.',
             icon: '✅',
           },
-        ].map((item) => (
-          <div class="card text-center">
+        ].map((item, i) => (
+          <div class={`card text-center reveal reveal-delay-${i + 1}`}>
             <div class="text-4xl mb-4">{item.icon}</div>
             <h3 class="text-xl font-bold text-[#1B2A4A] mb-3">{item.title}</h3>
             <p class="text-slate-600 leading-relaxed">{item.description}</p>
@@ -101,8 +101,8 @@ const aboutFAQs = [
 
   <section class="section-padding bg-white">
     <div class="container-wide max-w-4xl mx-auto">
-      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6">Our Business Model — Explained Honestly</h2>
-      <div class="space-y-5 text-slate-600 leading-relaxed">
+      <h2 class="text-3xl font-black text-[#1B2A4A] mb-6 reveal">Our Business Model — Explained Honestly</h2>
+      <div class="space-y-5 text-slate-600 leading-relaxed reveal reveal-delay-1">
         <p class="text-lg">We believe in being completely transparent about how we make money, so there's no ambiguity whatsoever.</p>
         <p>When you submit a PCP claim enquiry through Cash Me Up, we pass your details to one of our regulated claims management partners. If you proceed with a claim and it's successful, the claims management company earns a success fee (a percentage of your compensation, agreed with you upfront). Cash Me Up receives a referral commission from that claims company.</p>
         <p><strong class="text-[#1B2A4A]">To be absolutely clear:</strong> the referral commission we receive comes entirely from our partner, not from you. Your compensation is not reduced by our referral commission. You receive the full agreed amount, minus only the claims company's success fee (which you agree to before proceeding).</p>
